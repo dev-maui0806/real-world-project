@@ -16,7 +16,7 @@ interface FAQAccordionProps {
 }
 
 export default function FAQAccordion({
-  items,
+  items = [],
   title = 'Frequently Asked Questions',
   showCTA = true,
   ctaText = 'Join Now',
@@ -27,6 +27,10 @@ export default function FAQAccordion({
   const toggleAccordion = (id: number) => {
     setExpandedId(expandedId === id ? null : id);
   };
+
+  if (!items || items.length === 0) {
+    return null;
+  }
 
   return (
     <section className="w-full bg-black flex flex-col items-center justify-center py-[100px] px-[40px]">

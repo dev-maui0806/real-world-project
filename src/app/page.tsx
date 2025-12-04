@@ -48,17 +48,37 @@ export default function Home() {
             {/* Headings Container */}
             <div className="flex flex-col items-center space-y-6">
               {/* Main Heading */}
-              <h1 className="text-5xl md:text-6xl font-sans font-normal text-white text-center leading-tight">
+              <h1
+                className="font-sans text-white text-center overflow-wrap break-word w-full"
+                style={{
+                  fontSize: '60px',
+                  lineHeight: '60px',
+                  fontWeight: 400,
+                  fontFamily: '"General Sans", "General Sans Placeholder", sans-serif',
+                  whiteSpace: 'pre-wrap',
+                  wordBreak: 'break-word',
+                  overflowWrap: 'break-word',
+                }}
+              >
                 MONEY MAKING IS
-                <br />
-                <span className="font-bold">A SKILL</span>
+                <span style={{ fontWeight: 700 }}>A SKILL</span>
               </h1>
 
               {/* Subheading */}
-              <h2 className="text-2xl md:text-3xl font-sans font-medium text-white text-center leading-tight">
+              <h2
+                className="font-sans text-white text-center user-select-none"
+                style={{
+                  fontSize: '35px',
+                  fontWeight: 500,
+                  lineHeight: '35px',
+                  fontFamily: '"General Sans", "General Sans Placeholder", sans-serif',
+                  textWrap: 'nowrap',
+                  whiteSpace: 'pre',
+                  userSelect: 'none',
+                }}
+              >
                 We will teach you how to
-                <br />
-                <span className="font-bold">master it</span>
+                <span style={{ fontWeight: 700 }}> master it</span>
               </h2>
             </div>
 
