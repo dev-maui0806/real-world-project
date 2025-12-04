@@ -61,7 +61,7 @@ export default function Home() {
                 }}
               >
                 MONEY MAKING IS
-                <span style={{ fontWeight: 700 }}>A SKILL</span>
+                <span style={{ fontWeight: 700 }}> A SKILL</span>
               </h1>
 
               {/* Subheading */}
