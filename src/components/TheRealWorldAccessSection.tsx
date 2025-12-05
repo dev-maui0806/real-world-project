@@ -25,7 +25,7 @@ const Feature = ({
     <div className="w-full flex flex-col lg:flex-row gap-0 items-center justify-center">
       {/* Image Container */}
       <div
-        className={`flex-1 flex items-center justify-center overflow-hidden ${
+        className={`flex-1 flex items-center justify-center overflow-hidden w-full lg:w-auto ${
           isImageLeft ? 'order-first' : 'order-last'
         }`}
         style={{ opacity: 0.55 }}
@@ -46,15 +46,15 @@ const Feature = ({
 
       {/* Text Content */}
       <div
-        className={`flex-1 flex flex-col gap-4 justify-center items-start p-12 lg:p-20 ${
+        className={`flex-1 flex flex-col gap-2 sm:gap-3 md:gap-4 justify-center items-start p-4 sm:p-6 md:p-12 lg:p-20 w-full lg:w-auto ${
           isImageLeft ? 'order-last' : 'order-first'
         }`}
       >
-        <div className="flex flex-col gap-4 w-full">
-          <h3 className="text-white text-[28px] font-bold leading-[36.4px] font-sans">
+        <div className="flex flex-col gap-2 sm:gap-3 md:gap-4 w-full">
+          <h3 className="text-white text-lg sm:text-2xl md:text-[28px] font-bold leading-6 sm:leading-8 md:leading-[36.4px] font-sans">
             {title}
           </h3>
-          <p className="text-white/64 text-base leading-[22.4px] font-sans break-words">
+          <p className="text-white/64 text-xs sm:text-sm md:text-base leading-5 sm:leading-6 md:leading-[22.4px] font-sans break-words">
             {description}
           </p>
         </div>
@@ -65,10 +65,10 @@ const Feature = ({
 
 export default function TheRealWorldAccessSection() {
   return (
-    <section className="w-full flex flex-col items-center justify-center gap-16 py-24 px-4 bg-gradient-to-b from-[rgb(9,16,27)] via-[rgb(10,17,28)] to-[rgb(5,14,21)]">
+    <section className="w-full flex flex-col items-center justify-center gap-8 sm:gap-12 md:gap-16 py-8 sm:py-16 md:py-24 px-4 sm:px-8 bg-gradient-to-b from-[rgb(9,16,27)] via-[rgb(10,17,28)] to-[rgb(5,14,21)]">
       {/* Title */}
       <div className="flex justify-center w-full">
-        <h2 className="text-white text-4xl md:text-5xl font-bold leading-[55px] font-sans uppercase text-center max-w-2xl">
+        <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-7 sm:leading-9 md:leading-[55px] font-sans uppercase text-center max-w-2xl">
           <span className="text-white">The Real World</span>
           <br />
           Access &amp; Features
@@ -143,21 +143,21 @@ export default function TheRealWorldAccessSection() {
       </div>
 
       {/* CTA Section */}
-      <div className="flex flex-col items-center gap-3 w-full max-w-sm">
+      <div className="flex flex-col items-center gap-2 sm:gap-3 w-full max-w-sm px-4">
         {/* Button */}
         <a
           rel="noopener"
           href="https://checkout.jointherealworld.com/checkout?a=zwqn9rf9&subid=official"
-          className="w-full flex items-center justify-center rounded-[10px] px-[34px] py-5 bg-gradient-to-r from-[rgb(255,169,48)] via-[rgb(255,171,35)] to-[rgb(213,170,18)] hover:opacity-90 transition-opacity"
+          className="w-full flex items-center justify-center rounded-[10px] px-4 sm:px-6 py-3 sm:py-5 bg-gradient-to-r from-[rgb(255,169,48)] via-[rgb(255,171,35)] to-[rgb(213,170,18)] hover:opacity-90 transition-opacity"
         >
-          <p className="text-slate-900 text-center font-bold text-2xl uppercase tracking-[1.2px]">
+          <p className="text-slate-900 text-center font-bold text-base sm:text-lg md:text-2xl uppercase tracking-[0.6px] sm:tracking-[1.2px]">
             JOIN THE REAL WORLD
           </p>
         </a>
 
         {/* Price Lock Notice */}
-        <div className="flex items-center gap-2 justify-center">
-          <div className="w-4 flex-shrink-0">
+        <div className="flex items-center gap-1.5 sm:gap-2 justify-center flex-wrap">
+          <div className="w-3 sm:w-4 flex-shrink-0">
             <img
               decoding="auto"
               loading="lazy"
@@ -168,8 +168,7 @@ export default function TheRealWorldAccessSection() {
               className="w-full h-auto"
             />
           </div>
-          <p className="text-white/60 text-center  leading-5" style={{fontFamily: '"General Sans", sans-serif',
-              fontSize: '18px', whiteSpace: 'pre'}}>
+          <p className="text-white/60 text-center text-xs sm:text-sm md:text-base leading-4 sm:leading-5" style={{fontFamily: '"General Sans", sans-serif'}}>
             Lock-in your price before it increases.
             <span className="text-[rgb(255,207,35)] font-normal"> Act fast.</span>
           </p>

@@ -5,44 +5,44 @@ export default function AchieveGoalsSection() {
         backgroundImage: 'linear-gradient(rgb(6, 14, 21) 89%, rgb(9, 16, 27) 100%)',
         backgroundColor: 'rgb(6, 14, 21)',
       }}
-      className="w-full flex flex-col items-center justify-center px-4 py-20"
+      className="w-full flex flex-col items-center justify-center px-4 py-12 sm:py-16 md:py-20"
     >
-      <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-20">
+      <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-10 md:gap-16 lg:gap-20">
         {/* Left Content Column */}
         <div
-          className="w-full lg:flex-1 flex flex-col items-start justify-center gap-6"
+          className="w-full lg:flex-1 flex flex-col items-start justify-center gap-4 sm:gap-5 md:gap-6"
           style={{
-            paddingLeft: '96px',
+            paddingLeft: 'clamp(16px, 5vw, 96px)',
           }}
         >
           {/* Main Heading */}
           <h2
             style={{
               fontFamily: '"General Sans", sans-serif',
-              fontSize: '40px',
-              lineHeight: '54px',
+              fontSize: 'clamp(28px, 6vw, 40px)',
+              lineHeight: 'clamp(36px, 8vw, 54px)',
               color: 'rgb(255, 255, 255)',
               overflowWrap: 'break-word',
-              whiteSpace: 'pre-wrap',
+              whiteSpace: 'normal',
               wordBreak: 'break-word',
             }}
           >
             ACHIEVE YOUR
             <br />
-            <span style={{ fontWeight: 700 }}>GOALS</span>
+            <span style={{ fontWeight: 700 }}> GOALS</span>
           </h2>
 
           {/* Content Paragraphs */}
-          <div className="flex flex-col gap-4 w-full">
+          <div className="flex flex-col gap-3 sm:gap-3.5 md:gap-4 w-full">
             {/* Paragraph 1 */}
             <p
               style={{
                 fontFamily: '"General Sans", sans-serif',
-                fontSize: '24px',
-                lineHeight: '38.4px',
+                fontSize: 'clamp(16px, 4vw, 24px)',
+                lineHeight: 'clamp(24px, 5vw, 38.4px)',
                 color: 'rgba(255, 255, 255, 0.64)',
                 overflowWrap: 'break-word',
-                whiteSpace: 'pre-wrap',
+                whiteSpace: 'normal',
                 wordBreak: 'break-word',
               }}
             >
@@ -63,11 +63,11 @@ export default function AchieveGoalsSection() {
             <p
               style={{
                 fontFamily: '"General Sans", sans-serif',
-                fontSize: '24px',
-                lineHeight: '38.4px',
+                fontSize: 'clamp(16px, 4vw, 24px)',
+                lineHeight: 'clamp(24px, 5vw, 38.4px)',
                 color: 'rgba(255, 255, 255, 0.64)',
                 overflowWrap: 'break-word',
-                whiteSpace: 'pre-wrap',
+                whiteSpace: 'normal',
                 wordBreak: 'break-word',
               }}
             >
@@ -89,11 +89,11 @@ export default function AchieveGoalsSection() {
             <p
               style={{
                 fontFamily: '"General Sans", sans-serif',
-                fontSize: '24px',
-                lineHeight: '38.4px',
+                fontSize: 'clamp(16px, 4vw, 24px)',
+                lineHeight: 'clamp(24px, 5vw, 38.4px)',
                 color: 'rgba(255, 255, 255, 0.64)',
                 overflowWrap: 'break-word',
-                whiteSpace: 'pre-wrap',
+                whiteSpace: 'normal',
                 wordBreak: 'break-word',
               }}
             >
@@ -122,12 +122,12 @@ export default function AchieveGoalsSection() {
             <p
               style={{
                 fontFamily: '"General Sans", sans-serif',
-                fontSize: '24px',
-                lineHeight: '38.4px',
+                fontSize: 'clamp(16px, 4vw, 24px)',
+                lineHeight: 'clamp(24px, 5vw, 38.4px)',
                 color: 'rgb(255, 255, 255)',
                 fontWeight: 600,
                 overflowWrap: 'break-word',
-                whiteSpace: 'pre-wrap',
+                whiteSpace: 'normal',
                 wordBreak: 'break-word',
               }}
             >
@@ -146,12 +146,10 @@ export default function AchieveGoalsSection() {
 
         {/* Right Image Column */}
         <div
+          className="hidden lg:block w-full lg:flex-1"
           style={{
             aspectRatio: '1.01553 / 1',
-            flexBasis: '0px',
-            flexGrow: 1,
             position: 'relative',
-            width: '1px',
             backgroundColor: 'rgba(0, 0, 0, 0)',
           }}
         >

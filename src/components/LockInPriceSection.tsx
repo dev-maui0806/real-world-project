@@ -34,9 +34,11 @@ export default function LockInPriceSection({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: '40px',
-        paddingTop: '24px',
-        paddingBottom: '64px',
+        gap: 'clamp(1.5rem, 6vw, 2.5rem)',
+        paddingTop: 'clamp(1rem, 4vw, 1.5rem)',
+        paddingBottom: 'clamp(2rem, 8vw, 4rem)',
+        paddingLeft: 'clamp(1rem, 5vw, 2rem)',
+        paddingRight: 'clamp(1rem, 5vw, 2rem)',
         width: '100%',
       }}
       className="relative"
@@ -48,12 +50,10 @@ export default function LockInPriceSection({
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: '40px',
+          gap: 'clamp(1.25rem, 5vw, 2.5rem)',
           maxWidth: '830px',
           width: '100%',
           position: 'relative',
-          paddingLeft: '16px',
-          paddingRight: '16px',
         }}
       >
         {/* Icon Section with Glow */}
@@ -72,11 +72,11 @@ export default function LockInPriceSection({
           <div
             style={{
               position: 'absolute',
-              width: '100px',
-              height: '100px',
+              width: 'clamp(50px, 12vw, 100px)',
+              height: 'clamp(50px, 12vw, 100px)',
               backgroundColor: 'rgba(255, 207, 35, 0.28)',
               filter: 'blur(40px)',
-              top: '-10px',
+              top: 'clamp(-5px, -2vw, -10px)',
               left: '50%',
               transform: 'translateX(-50%)',
               zIndex: 0,
@@ -88,7 +88,7 @@ export default function LockInPriceSection({
           <div
             style={{
               position: 'relative',
-              width: '68px',
+              width: 'clamp(40px, 10vw, 68px)',
               aspectRatio: '1.11475 / 1',
               zIndex: 1,
             }}
@@ -113,12 +113,12 @@ export default function LockInPriceSection({
         <h2
           style={{
             fontFamily: '"General Sans", sans-serif',
-            fontSize: '44px',
+            fontSize: 'clamp(1.5rem, 6vw, 2.75rem)',
             fontWeight: 700,
-            lineHeight: '52.8px',
+            lineHeight: 'clamp(2rem, 7vw, 3.3rem)',
             color: 'rgb(255, 255, 255)',
             textAlign: 'center',
-            whiteSpace: 'pre-wrap',
+            whiteSpace: 'normal',
             wordBreak: 'break-word',
             overflowWrap: 'break-word',
             zIndex: 5,
@@ -132,11 +132,11 @@ export default function LockInPriceSection({
         <p
           style={{
             fontFamily: '"General Sans", sans-serif',
-            fontSize: '24px',
-            lineHeight: '36px',
+            fontSize: 'clamp(0.875rem, 3.5vw, 1.5rem)',
+            lineHeight: 'clamp(1.5rem, 4vw, 2.25rem)',
             color: 'rgba(255, 255, 255, 0.71)',
             textAlign: 'center',
-            whiteSpace: 'pre-wrap',
+            whiteSpace: 'normal',
             wordBreak: 'break-word',
             overflowWrap: 'break-word',
             width: '100%',
@@ -154,8 +154,10 @@ export default function LockInPriceSection({
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: '10px',
+          gap: 'clamp(0.5rem, 2vw, 0.625rem)',
           position: 'relative',
+          width: '100%',
+          maxWidth: '600px',
         }}
       >
         {/* Main Button */}
@@ -165,27 +167,29 @@ export default function LockInPriceSection({
           style={{
             backgroundImage: 'linear-gradient(95deg, rgb(255, 169, 48) 0%, rgb(255, 171, 35) 51.2387%, rgb(213, 170, 18) 113.52%)',
             borderRadius: '10px',
-            padding: '20px 34px',
+            padding: 'clamp(1rem, 2.5vw, 1.25rem) clamp(1.25rem, 5vw, 2.125rem)',
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
             cursor: 'pointer',
             willChange: 'transform',
             zIndex: 1,
+            width: '100%',
           }}
           className="hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
         >
           <p
             style={{
               fontFamily: '"General Sans", sans-serif',
-              fontSize: '24px',
+              fontSize: 'clamp(0.875rem, 3.5vw, 1.5rem)',
               fontWeight: 700,
-              letterSpacing: '1.2px',
-              lineHeight: '24px',
+              letterSpacing: 'clamp(0.4px, 0.8vw, 1.2px)',
+              lineHeight: 'clamp(1rem, 3vw, 1.5rem)',
               textAlign: 'center',
               textTransform: 'uppercase',
-              whiteSpace: 'pre',
+              whiteSpace: 'normal',
               margin: 0,
+              wordBreak: 'break-word',
             }}
             className="text-black"
           >
@@ -199,17 +203,20 @@ export default function LockInPriceSection({
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '8px',
-            height: '32px',
+            gap: 'clamp(0.4rem, 1.5vw, 0.5rem)',
+            minHeight: 'clamp(20px, 5vw, 32px)',
             position: 'relative',
+            flexWrap: 'wrap',
+            width: '100%',
           }}
         >
           {/* User Avatars */}
           <div
             style={{
               position: 'relative',
-              width: '100px',
+              width: 'clamp(60px, 12vw, 100px)',
               aspectRatio: '3.17143 / 1',
+              flexShrink: 0,
             }}
           >
             <img
@@ -231,11 +238,13 @@ export default function LockInPriceSection({
           <p
             style={{
               fontFamily: '"General Sans", sans-serif',
-              fontSize: '18px',
-              lineHeight: '20px',
+              fontSize: 'clamp(0.75rem, 2.5vw, 1.125rem)',
+              lineHeight: 'clamp(1rem, 3vw, 1.25rem)',
               color: 'rgba(255, 255, 255, 0.6)',
-              whiteSpace: 'pre',
+              whiteSpace: 'normal',
               margin: 0,
+              textAlign: 'center',
+              wordBreak: 'break-word',
             }}
           >
             {socialProofText}

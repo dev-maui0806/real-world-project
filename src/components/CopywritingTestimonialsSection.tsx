@@ -37,24 +37,42 @@ const StarIcon = () => (
 
 export default function CopywritingTestimonialsSection() {
   return (
-    <section className="w-full bg-[#050e15] flex flex-col items-center py-28 px-8 gap-20" aria-label="testimonials section">
-      <div className="w-full max-w-6xl flex flex-col gap-16">
+    <section className="w-full bg-[#050e15] flex flex-col items-center py-8 sm:py-16 lg:py-28 px-4 sm:px-8 gap-8 sm:gap-12 lg:gap-20" aria-label="testimonials section">
+      <style>{`
+        @media (max-width: 640px) {
+          .testimonials-title { font-size: 1.5rem; line-height: 1.8rem; }
+          .testimonial-quote { font-size: 1rem; line-height: 1.4rem; }
+          .testimonial-gap { gap: 2rem; }
+        }
+        @media (min-width: 641px) and (max-width: 1024px) {
+          .testimonials-title { font-size: 1.875rem; line-height: 2.25rem; }
+          .testimonial-quote { font-size: 1.125rem; line-height: 1.6rem; }
+          .testimonial-gap { gap: 2rem; }
+        }
+        @media (min-width: 1025px) {
+          .testimonials-title { font-size: 2.25rem; line-height: 2.7rem; }
+          .testimonial-quote { font-size: 1.3125rem; line-height: 1.75rem; }
+          .testimonial-gap { gap: 4rem; }
+        }
+      `}</style>
+
+      <div className="w-full max-w-6xl flex flex-col gap-8 sm:gap-12 lg:gap-16">
         {/* Section Title */}
         <div className="text-center">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight tracking-tight">
-            We've taught over 200,000+<br />
-            Students how to grow their Income<br />
+          <h2 className="testimonials-title font-bold text-white leading-tight tracking-tight">
+            We've taught over 200,000+<br className="hidden sm:inline" />
+            Students how to grow their Income<br className="hidden sm:inline" />
             <br />
             Now we can do it for you.
           </h2>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-16">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="flex flex-col gap-8"
+              className="flex flex-col gap-4 sm:gap-8"
             >
               {/* Star Rating */}
               <div className="flex gap-0 h-5">
@@ -66,7 +84,7 @@ export default function CopywritingTestimonialsSection() {
               </div>
 
               {/* Testimonial Quote */}
-              <p className="text-xl font-bold text-white leading-[28px] whitespace-pre-wrap">
+              <p className="testimonial-quote font-bold text-white whitespace-pre-wrap leading-relaxed">
                 {testimonial.quote}
               </p>
             </div>

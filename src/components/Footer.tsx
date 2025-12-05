@@ -67,9 +67,10 @@ export default function Footer() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: '48px',
+          gap: 'clamp(32px, 8vw, 48px)',
           width: '100%',
-          paddingBottom: '64px',
+          paddingBottom: 'clamp(48px, 10vw, 64px)',
+          paddingTop: 'clamp(32px, 8vw, 48px)',
           position: 'relative',
         }}
       >
@@ -79,13 +80,13 @@ export default function Footer() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '32px',
+            gap: 'clamp(20px, 6vw, 32px)',
             width: '100%',
             opacity: 0.6,
             position: 'relative',
           }}
         >
-          <div style={{ position: 'relative', width: '123px', aspectRatio: '1/1' }}>
+          <div style={{ position: 'relative', width: 'clamp(80px, 20vw, 123px)', aspectRatio: '1/1' }}>
             <img
               decoding="auto"
               loading="lazy"
@@ -102,50 +103,50 @@ export default function Footer() {
         <div
           style={{
             display: 'flex',
-            gap: '64px',
+            gap: 'clamp(32px, 8vw, 64px)',
             alignItems: 'flex-start',
             justifyContent: 'center',
             width: '100%',
             position: 'relative',
             flexWrap: 'wrap',
-            paddingLeft: '16px',
-            paddingRight: '16px',
+            paddingLeft: 'clamp(16px, 4vw, 32px)',
+            paddingRight: 'clamp(16px, 4vw, 32px)',
           }}
         >
           {/* Courses Section */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', alignItems: 'flex-start' }}>
-            <p style={sectionTitleStyle}>Courses</p>
-            <div style={{ display: 'flex', gap: '32px' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                <p style={{ ...footerLinkStyle, margin: 0 }}>
-                  <a href="https://therealworld.net/the-real-world-copywriting" style={footerLinkStyle}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(24px, 6vw, 40px)', alignItems: 'flex-start' }}>
+            <p style={{ ...sectionTitleStyle, fontSize: 'clamp(18px, 4vw, 24px)' }}>Courses</p>
+            <div style={{ display: 'flex', gap: 'clamp(20px, 4vw, 32px)' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(16px, 4vw, 24px)' }}>
+                <p style={{ ...footerLinkStyle, margin: 0, fontSize: 'clamp(14px, 3vw, 18px)' }}>
+                  <a href="https://therealworld.net/the-real-world-copywriting" style={{ ...footerLinkStyle, fontSize: 'clamp(14px, 3vw, 18px)' }}>
                     Copywriting
                   </a>
                 </p>
-                <p style={{ ...footerLinkStyle, margin: 0 }}>
-                  <a href="https://therealworld.net/the-real-world-freelancing" style={footerLinkStyle}>
+                <p style={{ ...footerLinkStyle, margin: 0, fontSize: 'clamp(14px, 3vw, 18px)' }}>
+                  <a href="https://therealworld.net/the-real-world-freelancing" style={{ ...footerLinkStyle, fontSize: 'clamp(14px, 3vw, 18px)' }}>
                     Freelancing
                   </a>
                 </p>
-                <p style={{ ...footerLinkStyle, margin: 0 }}>
-                  <a href="https://therealworld.net/the-real-world-ecommerce" style={footerLinkStyle}>
+                <p style={{ ...footerLinkStyle, margin: 0, fontSize: 'clamp(14px, 3vw, 18px)' }}>
+                  <a href="https://therealworld.net/the-real-world-ecommerce" style={{ ...footerLinkStyle, fontSize: 'clamp(14px, 3vw, 18px)' }}>
                     E-commerce
                   </a>
                 </p>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                <p style={{ ...footerLinkStyle, margin: 0 }}>
-                  <a href="https://therealworld.net/the-real-world-stocks" style={footerLinkStyle}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(16px, 4vw, 24px)' }}>
+                <p style={{ ...footerLinkStyle, margin: 0, fontSize: 'clamp(14px, 3vw, 18px)' }}>
+                  <a href="https://therealworld.net/the-real-world-stocks" style={{ ...footerLinkStyle, fontSize: 'clamp(14px, 3vw, 18px)' }}>
                     Stocks
                   </a>
                 </p>
-                <p style={{ ...footerLinkStyle, margin: 0 }}>
-                  <a href="https://therealworld.net/the-real-world-finance" style={footerLinkStyle}>
+                <p style={{ ...footerLinkStyle, margin: 0, fontSize: 'clamp(14px, 3vw, 18px)' }}>
+                  <a href="https://therealworld.net/the-real-world-finance" style={{ ...footerLinkStyle, fontSize: 'clamp(14px, 3vw, 18px)' }}>
                     Business & Finance
                   </a>
                 </p>
-                <p style={{ ...footerLinkStyle, margin: 0 }}>
-                  <a href="https://therealworld.net/the-real-world-content-creation" style={footerLinkStyle}>
+                <p style={{ ...footerLinkStyle, margin: 0, fontSize: 'clamp(14px, 3vw, 18px)' }}>
+                  <a href="https://therealworld.net/the-real-world-content-creation" style={{ ...footerLinkStyle, fontSize: 'clamp(14px, 3vw, 18px)' }}>
                     Content Creation & AI
                   </a>
                 </p>
@@ -154,26 +155,26 @@ export default function Footer() {
           </div>
 
           {/* The Real World Section */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', alignItems: 'flex-start' }}>
-            <p style={sectionTitleStyle}>The Real World</p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              <p style={{ ...footerLinkStyle, margin: 0 }}>
-                <a href="https://therealworld.net/newsletter" style={footerLinkStyle}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(20px, 5vw, 32px)', alignItems: 'flex-start' }}>
+            <p style={{ ...sectionTitleStyle, fontSize: 'clamp(18px, 4vw, 24px)' }}>The Real World</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(16px, 4vw, 24px)' }}>
+              <p style={{ ...footerLinkStyle, margin: 0, fontSize: 'clamp(14px, 3vw, 18px)' }}>
+                <a href="https://therealworld.net/newsletter" style={{ ...footerLinkStyle, fontSize: 'clamp(14px, 3vw, 18px)' }}>
                   Newsletter
                 </a>
               </p>
-              <p style={{ ...footerLinkStyle, margin: 0 }}>
-                <a href="https://therealworld.net/contact-us" style={footerLinkStyle}>
+              <p style={{ ...footerLinkStyle, margin: 0, fontSize: 'clamp(14px, 3vw, 18px)' }}>
+                <a href="https://therealworld.net/contact-us" style={{ ...footerLinkStyle, fontSize: 'clamp(14px, 3vw, 18px)' }}>
                   Contact Us
                 </a>
               </p>
-              <p style={{ ...footerLinkStyle, margin: 0 }}>
-                <a href="https://therealworld.net/about-andrew-tate" style={footerLinkStyle}>
+              <p style={{ ...footerLinkStyle, margin: 0, fontSize: 'clamp(14px, 3vw, 18px)' }}>
+                <a href="https://therealworld.net/about-andrew-tate" style={{ ...footerLinkStyle, fontSize: 'clamp(14px, 3vw, 18px)' }}>
                   About Andrew Tate
                 </a>
               </p>
-              <p style={{ ...footerLinkStyle, margin: 0 }}>
-                <a href="https://therealworld.net/about-tristan-tate" style={footerLinkStyle}>
+              <p style={{ ...footerLinkStyle, margin: 0, fontSize: 'clamp(14px, 3vw, 18px)' }}>
+                <a href="https://therealworld.net/about-tristan-tate" style={{ ...footerLinkStyle, fontSize: 'clamp(14px, 3vw, 18px)' }}>
                   About Tristan Tate
                 </a>
               </p>
@@ -186,34 +187,34 @@ export default function Footer() {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '24px',
+            gap: 'clamp(16px, 4vw, 24px)',
             alignItems: 'center',
             justifyContent: 'center',
             position: 'relative',
           }}
         >
-          <div style={{ display: 'flex', gap: '24px', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <p style={{ ...legalLinkStyle, margin: 0 }}>
-              <a href="https://therealworld.net/login" style={legalLinkStyle}>
+          <div style={{ display: 'flex', gap: 'clamp(12px, 3vw, 24px)', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <p style={{ ...legalLinkStyle, margin: 0, fontSize: 'clamp(13px, 2.5vw, 18px)' }}>
+              <a href="https://therealworld.net/login" style={{ ...legalLinkStyle, fontSize: 'clamp(13px, 2.5vw, 18px)' }}>
                 Log In
               </a>
             </p>
-            <p style={{ ...legalLinkStyle, margin: 0 }}>
-              <a href="https://therealworld.net/terms-and-conditions" style={legalLinkStyle}>
+            <p style={{ ...legalLinkStyle, margin: 0, fontSize: 'clamp(13px, 2.5vw, 18px)' }}>
+              <a href="https://therealworld.net/terms-and-conditions" style={{ ...legalLinkStyle, fontSize: 'clamp(13px, 2.5vw, 18px)' }}>
                 Terms & Conditions
               </a>
             </p>
-            <p style={{ ...legalLinkStyle, margin: 0 }}>
-              <a href="https://therealworld.net/privacy-policy" style={legalLinkStyle}>
+            <p style={{ ...legalLinkStyle, margin: 0, fontSize: 'clamp(13px, 2.5vw, 18px)' }}>
+              <a href="https://therealworld.net/privacy-policy" style={{ ...legalLinkStyle, fontSize: 'clamp(13px, 2.5vw, 18px)' }}>
                 Privacy Policy
               </a>
             </p>
-            <p style={{ ...legalLinkStyle, margin: 0 }}>
-              <a href="https://therealworld.net/contact-us" style={legalLinkStyle}>
+            <p style={{ ...legalLinkStyle, margin: 0, fontSize: 'clamp(13px, 2.5vw, 18px)' }}>
+              <a href="https://therealworld.net/contact-us" style={{ ...legalLinkStyle, fontSize: 'clamp(13px, 2.5vw, 18px)' }}>
                 Contact Us
               </a>
             </p>
-            <p style={supportTextStyle}>Support: support@therealworld.net</p>
+            <p style={{ ...supportTextStyle, fontSize: 'clamp(13px, 2.5vw, 16px)' }}>Support: support@therealworld.net</p>
           </div>
 
           {/* Telegram Link */}
@@ -226,12 +227,12 @@ export default function Footer() {
               alignItems: 'center',
               justifyContent: 'center',
               gap: '10px',
-              height: '48px',
+              height: 'clamp(40px, 8vw, 48px)',
               cursor: 'pointer',
               position: 'relative',
             }}
           >
-            <div style={{ position: 'relative', width: '32px', height: '32px' }}>
+            <div style={{ position: 'relative', width: 'clamp(24px, 5vw, 32px)', height: 'clamp(24px, 5vw, 32px)' }}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 focusable="false"
@@ -251,12 +252,12 @@ export default function Footer() {
         </div>
 
         {/* Disclaimer Section */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', alignItems: 'center', maxWidth: '725px', paddingLeft: '16px', paddingRight: '16px' }}>
-          <p style={disclaimerStyle}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', alignItems: 'center', maxWidth: '725px', paddingLeft: 'clamp(16px, 4vw, 32px)', paddingRight: 'clamp(16px, 4vw, 32px)' }}>
+          <p style={{ ...disclaimerStyle, fontSize: 'clamp(13px, 2.5vw, 16px)' }}>
             Everything taught within The Real World is for education purposes only. It is up to each student to implement and do the work.
           </p>
           <br />
-          <p style={disclaimerStyle}>
+          <p style={{ ...disclaimerStyle, fontSize: 'clamp(13px, 2.5vw, 16px)' }}>
             The Real World team doesn't guarantee any profits or financial success.
           </p>
         </div>

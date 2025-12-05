@@ -13,6 +13,36 @@ export default function LoginPage() {
     <Header/>
       {/* First Section - Portal Login */}
       <div className="relative w-full min-h-screen flex flex-col items-center justify-center bg-black overflow-hidden">
+        <style>{`
+          @media (max-width: 640px) {
+            .login-logo { width: 80px !important; height: 80px !important; }
+            .login-heading { font-size: 1.75rem; line-height: 2.1rem; }
+            .login-subtitle { font-size: 0.875rem; line-height: 1.3rem; }
+            .login-top-logo { top: 1rem; }
+            .login-buttons-container { gap: 0.75rem; max-width: 90%; }
+            .login-button-height { height: 50px; padding: 0.75rem 1rem; font-size: 1rem; }
+            .login-bottom-logo { width: 2.5rem; height: 2.5rem; bottom: 1rem; right: 1rem; }
+          }
+          @media (min-width: 641px) and (max-width: 1024px) {
+            .login-logo { width: 100px !important; height: 100px !important; }
+            .login-heading { font-size: 2.25rem; line-height: 2.7rem; }
+            .login-subtitle { font-size: 1rem; line-height: 1.5rem; }
+            .login-top-logo { top: 2rem; }
+            .login-buttons-container { gap: 1rem; max-width: 400px; }
+            .login-button-height { height: 55px; padding: 0.875rem 1.5rem; font-size: 1rem; }
+            .login-bottom-logo { width: 3rem; height: 3rem; bottom: 2rem; right: 2rem; }
+          }
+          @media (min-width: 1025px) {
+            .login-logo { width: 120px !important; height: 120px !important; }
+            .login-heading { font-size: 2.25rem; line-height: 2.7rem; }
+            .login-subtitle { font-size: 1rem; line-height: 1.4rem; }
+            .login-top-logo { top: 5rem; }
+            .login-buttons-container { gap: 1rem; max-width: 448px; }
+            .login-button-height { height: 60px; padding: 0; font-size: 1.125rem; }
+            .login-bottom-logo { width: 3rem; height: 3rem; bottom: 2rem; right: 2rem; }
+          }
+        `}</style>
+
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
@@ -30,10 +60,10 @@ export default function LoginPage() {
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-[rgba(5,14,21,0.35)] to-[rgb(5,14,21)]" />
 
         {/* Logo with Annotation */}
-        <div className="absolute top-20 z-20 flex flex-col items-center gap-4">
+        <div className="login-top-logo absolute z-20 flex flex-col items-center gap-2 sm:gap-4">
           <a
             href="https://therealworld.net/"
-            className="relative w-[120px] h-[120px] flex items-center justify-center"
+            className="login-logo relative flex items-center justify-center rounded-lg"
           >
             <img
               decoding="auto"
@@ -48,22 +78,22 @@ export default function LoginPage() {
         </div>
 
         {/* Content Container */}
-        <div className="relative z-20 flex flex-col items-center justify-center gap-10 w-full px-4">
+        <div className="relative z-20 flex flex-col items-center justify-center gap-6 sm:gap-8 lg:gap-10 w-full px-4 sm:px-8">
           {/* Title and Subtitle Section */}
-          <div className="flex flex-col items-center gap-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-white text-center tracking-wide">
+          <div className="flex flex-col items-center gap-4 sm:gap-6 lg:gap-8">
+            <h1 className="login-heading font-bold text-white text-center tracking-wide">
               The Real World Portal
             </h1>
 
             <div className="flex flex-col items-center gap-0">
-              <p className="text-center text-white text-base md:text-lg leading-relaxed">
+              <p className="login-subtitle text-center text-white leading-relaxed">
                 <span className="text-white/84">Login to</span>
                 <span className="text-white font-normal ml-1" />
                 <span className="text-white font-semibold">The Real World</span>
                 <span className="text-white font-normal ml-1" />
                 <span className="text-white/84">app</span>
               </p>
-              <p className="text-center text-white text-base md:text-lg leading-relaxed mt-1">
+              <p className="login-subtitle text-center text-white leading-relaxed mt-1">
                 <span className="text-white/84">Stop procrastinating. Start</span>
                 <span className="text-white font-normal ml-1" />
                 <span className="text-white font-semibold">making money instead.</span>
@@ -72,15 +102,15 @@ export default function LoginPage() {
           </div>
 
           {/* Buttons Container */}
-          <div className="flex flex-col items-center gap-4 w-full max-w-md">
+          <div className="login-buttons-container flex flex-col items-center w-full">
             {/* Sign Up Button */}
             <Link
               target="_blank"
               rel="noopener"
               href="/checkout"
-              className="w-full h-[60px] flex items-center justify-center bg-transparent border-2 border-gray-600/30 rounded-lg hover:border-gray-500/50 transition-all duration-300"
+              className="login-button-height w-full flex items-center justify-center bg-transparent border-2 border-gray-600/30 rounded-lg hover:border-gray-500/50 transition-all duration-300"
             >
-              <p className="text-gray-300 text-center font-medium text-lg">
+              <p className="text-gray-300 text-center font-medium">
                 I don't have an account
               </p>
             </Link>
@@ -90,9 +120,9 @@ export default function LoginPage() {
               target="_blank"
               rel="noopener"
               href="https://app.jointherealworld.com/auth/login?a=zwqn9rf9&subid=official"
-              className="w-full h-[64px] flex items-center justify-center bg-gradient-to-b from-yellow-300 to-yellow-300 rounded-lg hover:opacity-90 transition-all duration-300"
+              className="login-button-height w-full flex items-center justify-center bg-gradient-to-b from-yellow-300 to-yellow-300 rounded-lg hover:opacity-90 transition-all duration-300"
             >
-              <p className="text-slate-900 text-center font-semibold text-lg uppercase">
+              <p className="text-slate-900 text-center font-semibold uppercase">
                 Log In
               </p>
             </a>
@@ -103,7 +133,7 @@ export default function LoginPage() {
         <a
           aria-hidden="true"
           href="https://therealworld.net/"
-          className="fixed bottom-8 right-8 z-20 w-12 h-12 flex items-center justify-center cursor-pointer"
+          className="login-bottom-logo fixed z-20 flex items-center justify-center cursor-pointer"
         >
           <svg
             className="w-full h-full"
@@ -130,18 +160,39 @@ export default function LoginPage() {
       </div>
 
       {/* Second Section - Why You Are Still On The Outside */}
-      <div className="w-full bg-gradient-to-b from-[rgb(9,16,27)] via-[rgb(6,14,21)] to-[rgb(5,14,21)] py-20 md:py-32 relative z-10">
-        <div className="w-full max-w-6xl mx-auto px-4 md:px-8">
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
+      <div className="w-full bg-gradient-to-b from-[rgb(9,16,27)] via-[rgb(6,14,21)] to-[rgb(5,14,21)] py-8 sm:py-16 lg:py-32 relative z-10">
+        <style>{`
+          @media (max-width: 640px) {
+            .why-outside-heading { font-size: 1.75rem; line-height: 2.1rem; margin-bottom: 1.5rem; }
+            .why-outside-content { gap: 1.5rem; }
+            .why-outside-text { font-size: 0.9375rem; line-height: 1.4rem; }
+            .why-outside-image { aspect-ratio: 4/3; }
+          }
+          @media (min-width: 641px) and (max-width: 1024px) {
+            .why-outside-heading { font-size: 2.25rem; line-height: 2.7rem; margin-bottom: 2rem; }
+            .why-outside-content { gap: 2rem; }
+            .why-outside-text { font-size: 1rem; line-height: 1.5rem; }
+            .why-outside-image { aspect-ratio: 1; }
+          }
+          @media (min-width: 1025px) {
+            .why-outside-heading { font-size: 3rem; line-height: 3.6rem; margin-bottom: 2rem; }
+            .why-outside-content { gap: 1.5rem; }
+            .why-outside-text { font-size: 1.125rem; line-height: 1.7rem; }
+            .why-outside-image { aspect-ratio: 1; }
+          }
+        `}</style>
+
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-8">
+          <div className="flex flex-col lg:flex-row gap-6 sm:gap-12 lg:gap-20 items-start">
             {/* Left Content */}
             <div className="flex-1">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+              <h2 className="why-outside-heading font-bold text-white leading-tight">
                 Why You Are Still On The
                 <span className="font-bold"> Outside</span>
               </h2>
 
-              <div className="space-y-6">
-                <p className="text-white/64 text-lg leading-relaxed">
+              <div className="why-outside-content space-y-6">
+                <p className="why-outside-text text-white/64 leading-relaxed">
                   The modern world is designed to keep you distracted. While you scroll, verify credentials, and wait for permission, the economy is shifting.
                   <span className="text-white font-medium"> The Real World</span>
                   was built to be a fortress against the
@@ -150,7 +201,7 @@ export default function LoginPage() {
                   <span className="text-white font-medium"> make you fail.</span>
                 </p>
 
-                <p className="text-white/64 text-lg leading-relaxed">
+                <p className="why-outside-text text-white/64 leading-relaxed">
                   Gaining access to this portal is not just about logging
                   <span className="text-white font-medium"> into a website</span>
                   ; it is about plugging into a hive mind of hyper-successful individuals. Most people spend their lives guessing how money is made. They try to learn from
@@ -160,7 +211,7 @@ export default function LoginPage() {
                   . That is why they stay poor.
                 </p>
 
-                <p className="text-white/64 text-lg leading-relaxed">
+                <p className="why-outside-text text-white/64 leading-relaxed">
                   Inside, we do not guess. We execute. We have removed the barriers to entry for
                   <span className="text-white font-medium"> high-level business education</span>
                   . Andrew Tate and the professors inside provide the blueprint. The only thing missing is your decision to step through the door. If you are already a member, your
@@ -173,8 +224,8 @@ export default function LoginPage() {
             </div>
 
             {/* Right Content - Image */}
-            <div className="flex-1 lg:sticky lg:top-8">
-              <div className="relative aspect-video lg:aspect-square overflow-hidden rounded-lg">
+            <div className="flex-1 w-full lg:sticky lg:top-8">
+              <div className="why-outside-image relative overflow-hidden rounded-lg">
                 <img
                   decoding="auto"
                   loading="lazy"

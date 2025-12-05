@@ -1,41 +1,58 @@
 export default function ChoiceIsYoursSection() {
+  const features = [
+    { text: 'Simple-step-by-step tutorials', iconWidth: 31, iconHeight: 25 },
+    { text: '19 wealth creation methods', iconWidth: 31, iconHeight: 25 },
+    { text: 'Access to millionaire mentors', iconWidth: 31, iconHeight: 25 },
+    { text: 'Community chat groups', iconWidth: 31, iconHeight: 25 },
+    { text: 'No experience', iconWidth: 31, iconHeight: 25 },
+    { text: 'Custom-made learning app', iconWidth: 31, iconHeight: 25 },
+    { text: 'Cancel anytime, risk-free', iconWidth: 26, iconHeight: 32 },
+    { text: '$49.99/month forever', iconWidth: 25, iconHeight: 32 },
+  ];
+
+  const getIconSrc = (idx: number): string => {
+    if (idx === 6) {
+      return 'https://framerusercontent.com/images/oHEZH0c9ZooBJrdqMUMU6Q0zoc.svg?width=26&height=32';
+    }
+    if (idx === 7) {
+      return 'https://framerusercontent.com/images/5zLicH57magQctPu8Q5swD0rvik.svg?width=25&height=32';
+    }
+    return 'https://framerusercontent.com/images/sOdW2IUxCQE5reYErU95utmbjk.svg?width=31&height=25';
+  };
+
   return (
     <section
       style={{
         backgroundColor: 'rgb(6, 14, 21)',
       }}
-      className="w-full flex flex-col items-center justify-center gap-16 px-4 py-24 md:py-32"
+      className="w-full flex flex-col items-center justify-center gap-8 sm:gap-12 md:gap-16 px-4 py-12 sm:py-20 md:py-24 lg:py-32"
     >
-      {/* Main Title */}
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center w-full">
         <h2
           style={{
             fontFamily: '"General Sans", sans-serif',
-            fontSize: '48px',
-            lineHeight: '66px',
+            fontSize: 'clamp(32px, 7vw, 48px)',
+            lineHeight: 'clamp(42px, 9vw, 66px)',
             color: 'rgb(255, 255, 255)',
-            whiteSpace: 'pre',
           }}
-          className="font-normal"
+          className="font-normal text-center"
         >
           THE CHOICE IS YOURS
         </h2>
       </div>
 
-      {/* Video Section */}
-      <div className="w-full flex items-center justify-center">
+      <div className="w-full flex items-center justify-center px-0 sm:px-2 md:px-4">
         <div
           style={{
             borderRadius: '10px',
             boxShadow: 'rgba(255, 255, 255, 0.14) 0px 2px 70px 1px',
-            height: '536px',
-            width: '950px',
-            maxWidth: '100%',
+            aspectRatio: '16 / 9',
+            width: '100%',
+            maxWidth: '950px',
             position: 'relative',
             overflow: 'hidden',
           }}
         >
-          {/* Dark Overlay */}
           <div
             style={{
               backgroundColor: 'rgba(0, 0, 0, 0.8)',
@@ -48,7 +65,6 @@ export default function ChoiceIsYoursSection() {
             }}
           />
 
-          {/* Video Container */}
           <div
             style={{
               position: 'absolute',
@@ -81,30 +97,27 @@ export default function ChoiceIsYoursSection() {
         </div>
       </div>
 
-      {/* Main Content Card */}
       <div
         style={{
           backgroundColor: 'rgb(19, 27, 35)',
           borderRadius: '10px',
-          padding: '56px',
+          padding: 'clamp(24px, 8vw, 56px)',
           display: 'flex',
           flexDirection: 'column',
-          gap: '48px',
-          width: 'fit-content',
-          maxWidth: '100%',
+          alignContent: 'center',
+          alignItems: 'center',
+          gap: 'clamp(24px, 6vw, 48px)',
+          maxWidth: '950px',
         }}
-        className="flex-shrink-0"
       >
-        {/* Header Section */}
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '32px',
+            gap: 'clamp(20px, 5vw, 32px)',
             alignItems: 'center',
           }}
         >
-          {/* Title and Description */}
           <div
             style={{
               display: 'flex',
@@ -116,11 +129,12 @@ export default function ChoiceIsYoursSection() {
             <h3
               style={{
                 fontFamily: '"General Sans", sans-serif',
-                fontSize: '40px',
+                fontSize: 'clamp(28px, 6vw, 40px)',
                 fontWeight: 700,
-                lineHeight: '47px',
+                lineHeight: 'clamp(36px, 8vw, 47px)',
                 color: 'rgb(255, 255, 255)',
-                whiteSpace: 'pre',
+                textAlign: 'center',
+                margin: 0,
               }}
             >
               TAKE ACTION
@@ -128,34 +142,35 @@ export default function ChoiceIsYoursSection() {
             <p
               style={{
                 fontFamily: '"General Sans", sans-serif',
-                fontSize: '27px',
+                fontSize: 'clamp(20px, 5vw, 27px)',
                 fontWeight: 700,
-                lineHeight: '31px',
+                lineHeight: 'clamp(26px, 6vw, 31px)',
                 color: 'rgb(255, 255, 255)',
-                whiteSpace: 'pre',
+                textAlign: 'center',
+                margin: 0,
               }}
             >
               You need to act now.
             </p>
           </div>
 
-          {/* Pricing Section */}
           <div
             style={{
               display: 'flex',
               gap: '12px',
               alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
             <p
               style={{
                 fontFamily: '"General Sans", sans-serif',
-                fontSize: '35px',
+                fontSize: 'clamp(24px, 5vw, 35px)',
                 fontWeight: 600,
-                lineHeight: '40px',
+                lineHeight: 'clamp(30px, 6vw, 40px)',
                 color: 'rgba(255, 255, 255, 0.66)',
                 textDecoration: 'line-through',
-                whiteSpace: 'pre',
+                margin: 0,
               }}
             >
               $147
@@ -163,11 +178,11 @@ export default function ChoiceIsYoursSection() {
             <p
               style={{
                 fontFamily: '"General Sans", sans-serif',
-                fontSize: '35px',
+                fontSize: 'clamp(24px, 5vw, 35px)',
                 fontWeight: 600,
-                lineHeight: '40px',
+                lineHeight: 'clamp(30px, 6vw, 40px)',
                 color: 'rgb(255, 207, 35)',
-                whiteSpace: 'pre',
+                margin: 0,
               }}
             >
               $49.99
@@ -175,137 +190,121 @@ export default function ChoiceIsYoursSection() {
           </div>
         </div>
 
-        {/* Features List */}
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '16px',
+            gap: 'clamp(12px, 3vw, 16px)',
             alignItems: 'flex-start',
             alignSelf: 'stretch',
           }}
         >
-          {[
-            'Simple-step-by-step tutorials',
-            '19 wealth creation methods',
-            'Access to millionaire mentors',
-            'Community chat groups',
-            'No experience',
-            'Custom-made learning app',
-            'Cancel anytime, risk-free',
-            '$49.99/month forever',
-          ].map((feature, idx) => {
-            const isSpecialFeature = idx === 6 || idx === 7;
-            const iconWidth = isSpecialFeature ? 26 : 31;
-            const iconHeight = isSpecialFeature ? 32 : 25;
-            const iconSrc =
-              idx === 6
-                ? 'https://framerusercontent.com/images/oHEZH0c9ZooBJrdqMUMU6Q0zoc.svg?width=26&height=32'
-                : idx === 7
-                  ? 'https://framerusercontent.com/images/5zLicH57magQctPu8Q5swD0rvik.svg?width=25&height=32'
-                  : 'https://framerusercontent.com/images/sOdW2IUxCQE5reYErU95utmbjk.svg?width=31&height=25';
-
-            return (
+          {features.map((feature, idx) => (
+            <div
+              key={idx}
+              style={{
+                display: 'flex',
+                gap: 'clamp(12px, 3vw, 16px)',
+                alignItems: 'flex-start',
+                width: '100%',
+              }}
+            >
               <div
-                key={idx}
                 style={{
-                  display: 'flex',
-                  gap: '16px',
-                  alignItems: 'center',
-                  width: '100%',
+                  width: `clamp(20px, 4vw, ${feature.iconWidth}px)`,
+                  aspectRatio: `${feature.iconWidth} / ${feature.iconHeight}`,
+                  position: 'relative',
+                  flexShrink: 0,
                 }}
               >
-                <div
+                <img
+                  decoding="auto"
+                  loading="lazy"
+                  width={feature.iconWidth}
+                  height={feature.iconHeight}
+                  alt=""
+                  src={getIconSrc(idx)}
                   style={{
-                    width: iconWidth,
-                    aspectRatio: `${iconWidth} / ${iconHeight}`,
-                    position: 'relative',
-                    flexShrink: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
                   }}
-                >
-                  <img
-                    decoding="auto"
-                    loading="lazy"
-                    width={iconWidth}
-                    height={iconHeight}
-                    alt=""
-                    src={iconSrc}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                    }}
-                  />
-                </div>
-                <p
-                  style={{
-                    fontFamily: '"General Sans", sans-serif',
-                    fontSize: '24px',
-                    lineHeight: '28.8px',
-                    color: 'rgba(255, 255, 255, 0.7)',
-                    whiteSpace: 'pre',
-                  }}
-                >
-                  {feature}
-                </p>
+                />
               </div>
-            );
-          })}
+              <p
+                style={{
+                  fontFamily: '"General Sans", sans-serif',
+                  fontSize: 'clamp(16px, 4vw, 24px)',
+                  lineHeight: 'clamp(22px, 5vw, 28.8px)',
+                  color: 'rgba(255, 255, 255, 0.7)',
+                  margin: 0,
+                }}
+              >
+                {feature.text}
+              </p>
+            </div>
+          ))}
         </div>
 
-        {/* CTA Section */}
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '10px',
+            gap: 'clamp(8px, 3vw, 10px)',
             alignItems: 'center',
+            width: '100%',
           }}
         >
-          {/* Button */}
           <a
             rel="noopener"
             href="/checkout"
             style={{
               backgroundImage: 'linear-gradient(95deg, rgb(255, 169, 48) 0%, rgb(255, 171, 35) 51.2387%, rgb(213, 170, 18) 113.52%)',
               borderRadius: '10px',
-              padding: '20px 34px',
+              padding: 'clamp(16px, 3vw, 20px) clamp(20px, 6vw, 34px)',
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
               willChange: 'transform',
               zIndex: 1,
+              textDecoration: 'none',
             }}
             className="hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
           >
             <p
               style={{
                 fontFamily: '"General Sans", sans-serif',
-                fontSize: '19.2px',
+                fontSize: 'clamp(14px, 4vw, 19.2px)',
                 fontWeight: 700,
-                letterSpacing: '1.2px',
-                lineHeight: '24px',
+                letterSpacing: 'clamp(0.6px, 1vw, 1.2px)',
+                lineHeight: 'clamp(18px, 5vw, 24px)',
                 textAlign: 'center',
                 textTransform: 'uppercase',
-                whiteSpace: 'pre',
+                margin: 0,
+                color: 'rgb(0, 0, 0)',
               }}
-              className="text-black"
             >
               JOIN THE REAL WORLD
             </p>
           </a>
 
-          {/* Urgency Message */}
           <div
             style={{
               display: 'flex',
-              gap: '8px',
+              gap: 'clamp(6px, 2vw, 8px)',
               alignItems: 'center',
               justifyContent: 'center',
             }}
           >
-            <div style={{ width: '16px', aspectRatio: '0.592593 / 1' }} className="relative">
+            <div
+              style={{
+                width: 'clamp(12px, 3vw, 16px)',
+                aspectRatio: '0.592593 / 1',
+                position: 'relative',
+                flexShrink: 0,
+              }}
+            >
               <img
                 decoding="auto"
                 loading="lazy"
@@ -323,10 +322,11 @@ export default function ChoiceIsYoursSection() {
             <p
               style={{
                 fontFamily: '"General Sans", sans-serif',
-                fontSize: '18px',
-                lineHeight: '20px',
+                fontSize: 'clamp(14px, 3vw, 18px)',
+                lineHeight: 'clamp(18px, 4vw, 20px)',
                 color: 'rgba(255, 255, 255, 0.6)',
-                whiteSpace: 'pre',
+                textAlign: 'center',
+                margin: 0,
               }}
             >
               Lock-in your price before it increases.{' '}
@@ -336,26 +336,23 @@ export default function ChoiceIsYoursSection() {
         </div>
       </div>
 
-      {/* OR DO NOTHING Section */}
       <div
         style={{
           display: 'flex',
           flexDirection: 'column',
-          gap: '10px',
+          gap: 'clamp(8px, 3vw, 10px)',
           alignItems: 'center',
         }}
       >
         <p
           style={{
             fontFamily: '"General Sans", sans-serif',
-            fontSize: '40px',
+            fontSize: 'clamp(28px, 6vw, 40px)',
             fontWeight: 500,
-            lineHeight: '47px',
+            lineHeight: 'clamp(36px, 8vw, 47px)',
             color: 'rgb(255, 255, 255)',
-            whiteSpace: 'pre-wrap',
-            wordBreak: 'break-word',
-            overflowWrap: 'break-word',
             textAlign: 'center',
+            margin: 0,
           }}
         >
           OR DO NOTHING..
@@ -363,11 +360,11 @@ export default function ChoiceIsYoursSection() {
         <p
           style={{
             fontFamily: '"General Sans", sans-serif',
-            fontSize: '27px',
-            lineHeight: '35px',
+            fontSize: 'clamp(20px, 5vw, 27px)',
+            lineHeight: 'clamp(28px, 6vw, 35px)',
             color: 'rgb(255, 255, 255)',
             textAlign: 'center',
-            whiteSpace: 'pre',
+            margin: 0,
           }}
         >
           Go watch Netflix. Work a 9-5.

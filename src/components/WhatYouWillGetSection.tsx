@@ -5,11 +5,11 @@ export default function WhatYouWillGetSection() {
         backgroundImage: 'linear-gradient(rgb(9, 16, 27) 0%, rgb(10, 17, 28) 79%, rgb(10, 17, 28) 100%)',
         backgroundColor: 'rgb(6, 14, 21)',
       }}
-      className="w-full flex flex-col items-center justify-center gap-16 px-4 py-24 md:py-32"
+      className="w-full flex flex-col items-center justify-center gap-10 sm:gap-12 md:gap-16 px-4 py-16 sm:py-24 md:py-32"
     >
       {/* Header Section */}
-      <div className="flex items-center justify-center gap-4 h-auto">
-        <div style={{ width: '35px', aspectRatio: '0.7 / 1' }} className="relative">
+      <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 h-auto flex-col sm:flex-row">
+        <div style={{ width: 'clamp(24px, 6vw, 35px)', aspectRatio: '0.7 / 1' }} className="relative">
           <img
             decoding="async"
             loading="lazy"
@@ -23,13 +23,12 @@ export default function WhatYouWillGetSection() {
         <h2
           style={{
             fontFamily: 'Inter, sans-serif',
-            fontSize: '55px',
-            lineHeight: '55px',
+            fontSize: 'clamp(28px, 7vw, 55px)',
+            lineHeight: 'clamp(28px, 7vw, 55px)',
             textTransform: 'uppercase',
-            whiteSpace: 'pre',
             color: 'rgb(255, 255, 255)',
           }}
-          className="font-bold"
+          className="font-bold text-center sm:text-left"
         >
           You Will Get{' '}
           <span style={{ fontWeight: 700 }}>Access To</span>
@@ -42,14 +41,14 @@ export default function WhatYouWillGetSection() {
         <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-0">
           {/* Image Column */}
           <div
-            className="w-full lg:flex-1 flex items-center justify-center"
+            className="w-full lg:flex-1 flex items-center justify-center order-2 lg:order-1"
             style={{ opacity: 0.55 }}
           >
             <div
               style={{
                 aspectRatio: '1.04225 / 1',
               }}
-              className="w-full max-w-md relative"
+              className="w-full max-w-xs sm:max-w-sm md:max-w-md relative"
             >
               <img
                 decoding="async"
@@ -65,7 +64,7 @@ export default function WhatYouWillGetSection() {
 
           {/* Content Column */}
           <div
-            className="w-full lg:flex-1 flex flex-col gap-6 px-6 md:px-12 py-16 md:py-20"
+            className="w-full lg:flex-1 flex flex-col gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-20 order-1 lg:order-2"
             style={{ alignItems: 'flex-start', justifyContent: 'center' }}
           >
             {/* Title */}
@@ -73,11 +72,10 @@ export default function WhatYouWillGetSection() {
               <h3
                 style={{
                   fontFamily: '"General Sans", sans-serif',
-                  fontSize: '28px',
+                  fontSize: 'clamp(20px, 5vw, 28px)',
                   fontWeight: 700,
-                  lineHeight: '36.4px',
+                  lineHeight: '1.3',
                   color: 'rgb(255, 255, 255)',
-                  whiteSpace: 'pre',
                 }}
               >
                 STEP-BY-STEP LEARNING
@@ -89,12 +87,9 @@ export default function WhatYouWillGetSection() {
               <p
                 style={{
                   fontFamily: '"General Sans", sans-serif',
-                  fontSize: '24px',
-                  lineHeight: '38.4px',
+                  fontSize: 'clamp(16px, 4vw, 24px)',
+                  lineHeight: '1.6',
                   color: 'rgba(255, 255, 255, 0.64)',
-                  whiteSpace: 'pre-wrap',
-                  wordBreak: 'break-word',
-                  overflowWrap: 'break-word',
                 }}
               >
                 You will get{' '}
@@ -110,7 +105,7 @@ export default function WhatYouWillGetSection() {
             </div>
 
             {/* Bullet Points */}
-            <div className="w-full flex flex-col gap-3">
+            <div className="w-full flex flex-col gap-2 sm:gap-3">
               {[
                 'Easy-to-follow program for financial success',
                 'New high income skills',
@@ -118,10 +113,10 @@ export default function WhatYouWillGetSection() {
               ].map((text, idx) => (
                 <div
                   key={idx}
-                  className="w-full flex items-center gap-4 bg-[rgb(19,27,35)] rounded-lg px-6 py-4"
-                  style={{ height: '65px' }}
+                  className="w-full flex items-center gap-3 sm:gap-4 bg-[rgb(19,27,35)] rounded-lg px-4 sm:px-6 py-3 sm:py-4"
+                  style={{ minHeight: 'auto' }}
                 >
-                  <div style={{ width: '31px', aspectRatio: '1.24 / 1' }} className="relative flex-shrink-0">
+                  <div style={{ width: '24px', aspectRatio: '1.24 / 1' }} className="relative flex-shrink-0">
                     <img
                       decoding="async"
                       loading="lazy"
@@ -135,11 +130,10 @@ export default function WhatYouWillGetSection() {
                   <p
                     style={{
                       fontFamily: 'Inter, sans-serif',
-                      fontSize: '20px',
+                      fontSize: 'clamp(14px, 3vw, 20px)',
                       fontWeight: 600,
-                      lineHeight: '24px',
+                      lineHeight: '1.4',
                       color: 'rgb(255, 255, 255)',
-                      whiteSpace: 'pre',
                     }}
                   >
                     {text}
@@ -154,7 +148,7 @@ export default function WhatYouWillGetSection() {
         <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-0">
           {/* Content Column */}
           <div
-            className="w-full lg:flex-1 flex flex-col gap-6 px-6 md:px-12 py-16 md:py-20"
+            className="w-full lg:flex-1 flex flex-col gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-20"
             style={{ alignItems: 'flex-start', justifyContent: 'center' }}
           >
             {/* Title */}
@@ -162,14 +156,10 @@ export default function WhatYouWillGetSection() {
               <h3
                 style={{
                   fontFamily: '"General Sans", sans-serif',
-                  fontSize: '28px',
+                  fontSize: 'clamp(20px, 5vw, 28px)',
                   fontWeight: 700,
-                  lineHeight: '36.4px',
+                  lineHeight: '1.3',
                   color: 'rgb(255, 255, 255)',
-                  overflowWrap: 'break-word',
-                  whiteSpace: 'pre-wrap',
-                  textWrap: 'balance',
-                  wordBreak: 'break-word',
                 }}
               >
                 DAILY LIVE SESSIONS WITH MILLIONAIRE COACHES
@@ -177,16 +167,13 @@ export default function WhatYouWillGetSection() {
             </div>
 
             {/* Description */}
-            <div className="w-full flex flex-col gap-4">
+            <div className="w-full flex flex-col gap-3 sm:gap-4">
               <p
                 style={{
                   fontFamily: '"General Sans", sans-serif',
-                  fontSize: '24px',
-                  lineHeight: '38.4px',
+                  fontSize: 'clamp(16px, 4vw, 24px)',
+                  lineHeight: '1.6',
                   color: 'rgba(255, 255, 255, 0.64)',
-                  whiteSpace: 'pre-wrap',
-                  wordBreak: 'break-word',
-                  overflowWrap: 'break-word',
                 }}
               >
                 Each of our{' '}
@@ -199,13 +186,10 @@ export default function WhatYouWillGetSection() {
               <p
                 style={{
                   fontFamily: '"General Sans", sans-serif',
-                  fontSize: '24px',
+                  fontSize: 'clamp(16px, 4vw, 24px)',
                   fontWeight: 600,
-                  lineHeight: '38.4px',
+                  lineHeight: '1.6',
                   color: 'rgb(255, 255, 255)',
-                  whiteSpace: 'pre-wrap',
-                  wordBreak: 'break-word',
-                  overflowWrap: 'break-word',
                 }}
               >
                 <br />
@@ -214,12 +198,9 @@ export default function WhatYouWillGetSection() {
               <p
                 style={{
                   fontFamily: '"General Sans", sans-serif',
-                  fontSize: '24px',
-                  lineHeight: '38.4px',
+                  fontSize: 'clamp(16px, 4vw, 24px)',
+                  lineHeight: '1.6',
                   color: 'rgba(255, 255, 255, 0.64)',
-                  whiteSpace: 'pre-wrap',
-                  wordBreak: 'break-word',
-                  overflowWrap: 'break-word',
                 }}
               >
                 They are hyper-motivated,{' '}
@@ -236,13 +217,10 @@ export default function WhatYouWillGetSection() {
               <p
                 style={{
                   fontFamily: '"General Sans", sans-serif',
-                  fontSize: '24px',
+                  fontSize: 'clamp(16px, 4vw, 24px)',
                   fontWeight: 600,
-                  lineHeight: '38.4px',
+                  lineHeight: '1.6',
                   color: 'rgb(255, 255, 255)',
-                  whiteSpace: 'pre-wrap',
-                  wordBreak: 'break-word',
-                  overflowWrap: 'break-word',
                 }}
               >
                 <br />
@@ -251,13 +229,10 @@ export default function WhatYouWillGetSection() {
               <p
                 style={{
                   fontFamily: '"General Sans", sans-serif',
-                  fontSize: '24px',
+                  fontSize: 'clamp(16px, 4vw, 24px)',
                   fontWeight: 600,
-                  lineHeight: '38.4px',
+                  lineHeight: '1.6',
                   color: 'rgb(255, 255, 255)',
-                  whiteSpace: 'pre-wrap',
-                  wordBreak: 'break-word',
-                  overflowWrap: 'break-word',
                 }}
               >
                 <span style={{ color: 'rgba(255, 255, 255, 0.64)' }}>
@@ -278,7 +253,7 @@ export default function WhatYouWillGetSection() {
               style={{
                 aspectRatio: '1.04225 / 1',
               }}
-              className="w-full max-w-md relative"
+              className="w-full max-w-xs sm:max-w-sm md:max-w-md relative"
             >
               <img
                 decoding="async"
@@ -297,14 +272,14 @@ export default function WhatYouWillGetSection() {
         <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-0">
           {/* Image Column */}
           <div
-            className="w-full lg:flex-1 flex items-center justify-center"
+            className="w-full lg:flex-1 flex items-center justify-center order-2 lg:order-1"
             style={{ opacity: 0.55 }}
           >
             <div
               style={{
                 aspectRatio: '1.04225 / 1',
               }}
-              className="w-full max-w-md relative"
+              className="w-full max-w-xs sm:max-w-sm md:max-w-md relative"
             >
               <img
                 decoding="async"
@@ -320,7 +295,7 @@ export default function WhatYouWillGetSection() {
 
           {/* Content Column */}
           <div
-            className="w-full lg:flex-1 flex flex-col gap-6 px-6 md:px-12 py-16 md:py-20"
+            className="w-full lg:flex-1 flex flex-col gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-20 order-1 lg:order-2"
             style={{ alignItems: 'flex-start', justifyContent: 'center' }}
           >
             {/* Title */}
@@ -328,13 +303,10 @@ export default function WhatYouWillGetSection() {
               <h3
                 style={{
                   fontFamily: '"General Sans", sans-serif',
-                  fontSize: '28px',
+                  fontSize: 'clamp(20px, 5vw, 28px)',
                   fontWeight: 700,
-                  lineHeight: '36.4px',
+                  lineHeight: '1.3',
                   color: 'rgb(255, 255, 255)',
-                  overflowWrap: 'break-word',
-                  whiteSpace: 'pre-wrap',
-                  wordBreak: 'break-word',
                 }}
               >
                 AN EXCLUSIVE COMMUNITY WITH 113K+ LIKE-MINDED STUDENTS
@@ -346,12 +318,9 @@ export default function WhatYouWillGetSection() {
               <p
                 style={{
                   fontFamily: '"General Sans", sans-serif',
-                  fontSize: '24px',
-                  lineHeight: '38.4px',
+                  fontSize: 'clamp(16px, 4vw, 24px)',
+                  lineHeight: '1.6',
                   color: 'rgba(255, 255, 255, 0.76)',
-                  overflowWrap: 'break-word',
-                  whiteSpace: 'pre-wrap',
-                  wordBreak: 'break-word',
                 }}
               >
                 Our online community is a supportive, high-focus environment.
@@ -361,31 +330,28 @@ export default function WhatYouWillGetSection() {
             </div>
 
             {/* Bullet Points */}
-            <div className="w-full flex flex-col gap-3">
+            <div className="w-full flex flex-col gap-2 sm:gap-3">
               {[
                 {
                   label: 'Network with',
                   text: '113,000+ people on the same mission',
-                  height: '65px',
                 },
                 {
                   label: 'Make',
                   text: 'like-minded friends',
                   fullText: 'on your financial journey',
-                  height: '65px',
                 },
                 {
                   label: 'Celebrate your wins',
                   text: 'with people who understand ambition',
-                  height: '84px',
                 },
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="w-full flex items-center gap-4 bg-[rgb(19,27,35)] rounded-lg px-6 py-4"
-                  style={{ minHeight: item.height }}
+                  className="w-full flex items-center gap-3 sm:gap-4 bg-[rgb(19,27,35)] rounded-lg px-4 sm:px-6 py-3 sm:py-4"
+                  style={{ minHeight: 'auto' }}
                 >
-                  <div style={{ width: '31px', aspectRatio: '1.24 / 1' }} className="relative flex-shrink-0">
+                  <div style={{ width: '24px', aspectRatio: '1.24 / 1' }} className="relative flex-shrink-0">
                     <img
                       decoding="async"
                       loading="lazy"
@@ -398,18 +364,13 @@ export default function WhatYouWillGetSection() {
                   </div>
                   <div
                     className="flex-1 flex flex-col justify-start"
-                    style={{
-                      whiteSpace: 'pre-wrap',
-                      wordBreak: 'break-word',
-                      overflowWrap: 'break-word',
-                    }}
                   >
                     <p
                       style={{
                         fontFamily: '"General Sans", sans-serif',
-                        fontSize: '20px',
+                        fontSize: 'clamp(14px, 3vw, 20px)',
                         fontWeight: 600,
-                        lineHeight: '24px',
+                        lineHeight: '1.4',
                         color: 'rgb(255, 255, 255)',
                       }}
                     >
@@ -449,7 +410,7 @@ export default function WhatYouWillGetSection() {
       </div>
 
       {/* CTA Section */}
-      <div className="flex flex-col items-center justify-center gap-3 mt-8">
+      <div className="flex flex-col items-center justify-center gap-2 sm:gap-3 mt-6 sm:mt-8 px-4">
         {/* Button */}
         <a
           href="/checkout"
@@ -457,7 +418,7 @@ export default function WhatYouWillGetSection() {
           style={{
             backgroundImage: 'linear-gradient(95deg, rgb(255, 169, 48) 0%, rgb(255, 171, 35) 51.2387%, rgb(213, 170, 18) 113.52%)',
             borderRadius: '10px',
-            padding: '20px 34px',
+            padding: 'clamp(14px, 3vw, 20px) clamp(24px, 6vw, 34px)',
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -470,13 +431,12 @@ export default function WhatYouWillGetSection() {
           <p
             style={{
               fontFamily: '"General Sans", sans-serif',
-              fontSize: '19.2px',
+              fontSize: 'clamp(14px, 3.5vw, 19.2px)',
               fontWeight: 700,
               letterSpacing: '1.2px',
               lineHeight: '24px',
               textAlign: 'center',
               textTransform: 'uppercase',
-              whiteSpace: 'pre',
             }}
             className="text-black"
           >
@@ -485,8 +445,8 @@ export default function WhatYouWillGetSection() {
         </a>
 
         {/* Urgency Message */}
-        <div className="flex items-center justify-center gap-2">
-          <div style={{ width: '16px', aspectRatio: '0.592593 / 1' }} className="relative">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 text-center">
+          <div style={{ width: '14px', aspectRatio: '0.592593 / 1' }} className="relative flex-shrink-0 hidden sm:block">
             <img
               decoding="async"
               loading="lazy"
@@ -500,10 +460,9 @@ export default function WhatYouWillGetSection() {
           <p
             style={{
               fontFamily: '"General Sans", sans-serif',
-              fontSize: '18px',
-              lineHeight: '20px',
+              fontSize: 'clamp(13px, 3vw, 18px)',
+              lineHeight: '1.4',
               color: 'rgba(255, 255, 255, 0.6)',
-              whiteSpace: 'pre',
             }}
           >
             Lock-in your price before it increases.{' '}

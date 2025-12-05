@@ -53,19 +53,231 @@ export default function StudentInterviewsSection() {
   ];
 
   return (
-    <section className="relative w-full bg-gradient-to-b from-[#0a111c] to-[#060e15] py-20 md:py-32 px-4 md:px-8">
-      {/* Header */}
-      <div className="flex flex-col items-center justify-center gap-3 mb-16 max-w-4xl mx-auto">
-        <p className="text-white/50 text-lg md:text-xl font-100 tracking-widest uppercase">
+    <section className="relative w-full bg-gradient-to-b from-[#0a111c] to-[#060e15] py-12 sm:py-20 md:py-32 px-4 md:px-8">
+      <div className="flex flex-col items-center justify-center gap-2 sm:gap-3 mb-10 sm:mb-16 max-w-4xl mx-auto">
+        <p className="text-white/50 text-sm sm:text-lg md:text-xl font-100 tracking-widest uppercase">
           OUR STUDENTS ARE LEVELING UP
         </p>
-        <h2 className="text-white text-4xl md:text-5xl font-100 text-center leading-tight">
+        <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-100 text-center leading-tight">
           STUDENT INTERVIEWS
         </h2>
       </div>
 
-      {/* Student Cards */}
-      <div className="flex flex-col gap-4 max-w-6xl mx-auto mb-16">
+      <div className="flex flex-col gap-4 max-w-6xl mx-auto mb-10 sm:mb-16">
+        {students.map((student) => (
+          <div
+            key={student.id}
+            style={{
+              alignContent: 'center',
+              alignItems: 'center',
+              backgroundColor: 'rgb(19, 27, 35)',
+              borderRadius: '10px',
+              display: 'flex',
+              flexDirection: 'column',
+              height: 'min-content',
+              justifyContent: 'space-between',
+              overflow: 'hidden',
+              paddingLeft: '0',
+              position: 'relative',
+              width: '100%',
+            }}
+            className="md:hidden flex-col"
+          >
+            <div
+              style={{
+                alignContent: 'flex-start',
+                alignItems: 'flex-start',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '16px',
+                padding: '24px',
+                position: 'relative',
+                width: '100%',
+              }}
+            >
+              <div
+                style={{
+                  alignContent: 'flex-start',
+                  alignItems: 'flex-start',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '8px',
+                  width: '100%',
+                }}
+              >
+                <p
+                  style={{
+                    borderColor: 'rgb(255, 207, 35)',
+                    color: 'rgb(255, 207, 35)',
+                    fontFamily: '"General Sans", "General Sans Placeholder", sans-serif',
+                    fontSize: '14px',
+                    fontWeight: 500,
+                    lineHeight: '20px',
+                    margin: 0,
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  {student.skill}
+                </p>
+                <div
+                  style={{
+                    alignContent: 'center',
+                    alignItems: 'center',
+                    display: 'flex',
+                    gap: '8px',
+                    height: 'auto',
+                    justifyContent: 'start',
+                    overflow: 'hidden',
+                    position: 'relative',
+                    width: '100%',
+                  }}
+                >
+                  <h3
+                    style={{
+                      borderColor: 'rgb(255, 255, 255)',
+                      color: 'rgb(255, 255, 255)',
+                      fontFamily: '"General Sans", "General Sans Placeholder", sans-serif',
+                      fontSize: '24px',
+                      fontWeight: 700,
+                      lineHeight: '28px',
+                      margin: 0,
+                      whiteSpace: 'wrap',
+                    }}
+                  >
+                    {student.name}, {student.age}
+                  </h3>
+                  <div
+                    style={{
+                      aspectRatio: '1 / 1',
+                      position: 'relative',
+                      width: '32px',
+                    }}
+                  >
+                    <img
+                      src={student.image}
+                      alt={student.name}
+                      width="160"
+                      height="160"
+                      style={{
+                        aspectRatio: 'auto 160 / 160',
+                        height: '100%',
+                        objectFit: 'cover',
+                        width: '100%',
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ width: '100%' }}>
+                <p
+                  style={{
+                    borderColor: 'rgba(255, 255, 255, 0.76)',
+                    color: 'rgba(255, 255, 255, 0.76)',
+                    fontFamily: '"General Sans", "General Sans Placeholder", sans-serif',
+                    fontSize: '18px',
+                    lineHeight: '24px',
+                    margin: 0,
+                  }}
+                >
+                  New revenue:
+                  <span
+                    style={{
+                      borderColor: 'rgb(255, 255, 255)',
+                      color: 'rgb(255, 255, 255)',
+                      display: 'inline',
+                      fontWeight: 700,
+                      marginLeft: '8px',
+                    }}
+                  >
+                    {student.revenue}
+                  </span>
+                </p>
+              </div>
+
+              <div style={{ width: '100%' }}>
+                <p
+                  style={{
+                    borderColor: 'rgba(255, 255, 255, 0.5)',
+                    color: 'rgba(255, 255, 255, 0.5)',
+                    fontFamily: '"General Sans", "General Sans Placeholder", sans-serif',
+                    fontSize: '16px',
+                    lineHeight: '24px',
+                    margin: 0,
+                  }}
+                >
+                  {student.testimonial}
+                </p>
+              </div>
+            </div>
+
+            <div
+              style={{
+                backgroundColor: 'rgb(24, 27, 33)',
+                height: 'auto',
+                width: '100%',
+                overflow: 'hidden',
+                position: 'relative',
+                aspectRatio: '1.66006 / 1',
+              }}
+            >
+              <div
+                style={{
+                  aspectRatio: '1.66006 / 1',
+                  backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                  left: '0px',
+                  position: 'absolute',
+                  top: '0px',
+                  width: '100%',
+                  zIndex: 10,
+                }}
+              />
+              <div
+                style={{
+                  aspectRatio: '1.66006 / 1',
+                  left: '0px',
+                  position: 'absolute',
+                  top: '0px',
+                  width: '100%',
+                }}
+              >
+                <div
+                  style={{
+                    alignItems: 'center',
+                    display: 'flex',
+                    height: '100%',
+                    justifyContent: 'center',
+                    overflow: 'hidden',
+                    position: 'relative',
+                    width: '100%',
+                  }}
+                >
+                  <div style={{ height: '100%', width: '100%' }}>
+                    <div style={{ height: '100%', position: 'relative', width: '100%' }}>
+                      <iframe
+                        src={`https://player.vimeo.com/video/${student.vimeoId}?autopause=0&app_id=122963`}
+                        frameBorder="0"
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        title={`${student.name}, ${student.age}, ${student.location}`}
+                        style={{
+                          height: '100%',
+                          left: '0px',
+                          position: 'absolute',
+                          top: '0px',
+                          width: '100%',
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="hidden md:flex flex-col gap-4 max-w-6xl mx-auto mb-16">
         {students.map((student) => (
           <div
             key={student.id}
@@ -82,9 +294,7 @@ export default function StudentInterviewsSection() {
               position: 'relative',
               width: '100%',
             }}
-            className="hidden md:flex"
           >
-            {/* Content - Left */}
             <div
               style={{
                 alignContent: 'flex-start',
@@ -99,7 +309,6 @@ export default function StudentInterviewsSection() {
                 width: '470px',
               }}
             >
-              {/* Skill and Name Section */}
               <div
                 style={{
                   alignContent: 'flex-start',
@@ -192,7 +401,6 @@ export default function StudentInterviewsSection() {
                 </div>
               </div>
 
-              {/* Revenue */}
               <div
                 style={{
                   display: 'flex',
@@ -232,7 +440,6 @@ export default function StudentInterviewsSection() {
                 </p>
               </div>
 
-              {/* Testimonial */}
               <div
                 style={{
                   display: 'flex',
@@ -262,7 +469,6 @@ export default function StudentInterviewsSection() {
               </div>
             </div>
 
-            {/* Video - Right */}
             <div
               style={{
                 backgroundColor: 'rgb(24, 27, 33)',
@@ -328,18 +534,17 @@ export default function StudentInterviewsSection() {
         ))}
       </div>
 
-      {/* CTA Section */}
-      <div className="flex flex-col items-center gap-6 max-w-3xl mx-auto">
+      <div className="flex flex-col items-center gap-4 sm:gap-6 max-w-3xl mx-auto">
         <a
           href="/checkout"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center px-8 py-5 md:px-10 md:py-6 bg-gradient-to-r from-[#ffa930] via-[#ffab23] to-[#d5aa12] rounded-lg font-bold text-black text-lg md:text-2xl tracking-wider uppercase hover:shadow-2xl hover:shadow-yellow-500/50 transition-all duration-300 transform hover:scale-105"
+          className="inline-flex items-center justify-center px-6 sm:px-8 py-4 sm:py-5 md:px-10 md:py-6 bg-gradient-to-r from-[#ffa930] via-[#ffab23] to-[#d5aa12] rounded-lg font-bold text-black text-base sm:text-lg md:text-xl lg:text-2xl tracking-wider uppercase hover:shadow-2xl hover:shadow-yellow-500/50 transition-all duration-300 transform hover:scale-105"
         >
           JOIN THE REAL WORLD
         </a>
 
-        <div className="flex flex-col md:flex-row items-center gap-3 text-center md:text-left">
-         <div style={{ width: '16px', aspectRatio: '0.592593 / 1' }} className="relative">
+        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center sm:text-left">
+          <div style={{ width: '14px', aspectRatio: '0.592593 / 1' }} className="relative flex-shrink-0 hidden sm:block">
             <img
               decoding="async"
               loading="lazy"
@@ -353,10 +558,9 @@ export default function StudentInterviewsSection() {
           <p
             style={{
               fontFamily: '"General Sans", sans-serif',
-              fontSize: '18px',
+              fontSize: 'clamp(14px, 3vw, 18px)',
               lineHeight: '20px',
               color: 'rgba(255, 255, 255, 0.6)',
-              whiteSpace: 'pre',
             }}
           >
             Lock-in your price before it increases.{' '}

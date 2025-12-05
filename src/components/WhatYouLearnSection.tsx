@@ -23,28 +23,28 @@ const CourseCard = ({
   hasVideo = true,
   isNew = false
 }: CourseCardProps) => (
-  <div className="relative bg-[#131b23] rounded-lg flex flex-col justify-end overflow-hidden pt-18 z-[5] flex-1 min-w-0 gap-2.5 w-full md:w-1/2">
+  <div className="relative bg-[#131b23] rounded-lg flex flex-col justify-end overflow-hidden pt-6 sm:pt-10 md:pt-14 z-[5] flex-1 min-w-0 gap-2.5 w-full">
     {/* NEW Badge */}
     {isNew && (
-      <div className="absolute top-4 right-[27px] z-10">
-        <p className="text-[#ffcf23] text-sm leading-[33px] font-inter">NEW</p>
+      <div className="absolute top-2 sm:top-4 right-4 sm:right-[27px] z-10">
+        <p className="text-[#ffcf23] text-xs sm:text-sm leading-7 sm:leading-[33px] font-inter">NEW</p>
       </div>
     )}
 
-    <div className="flex flex-col gap-10 justify-end w-full">
+    <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 lg:gap-10 justify-end w-full">
       {/* Content Section */}
-      <div className="flex flex-col gap-8 justify-center items-center px-10 w-full">
+      <div className="flex flex-col gap-3 sm:gap-4 md:gap-6 lg:gap-8 justify-center items-center px-3 sm:px-6 md:px-10 w-full">
         {/* Icon and Title */}
-        <div className="flex gap-4 justify-center items-center min-w-0 w-full">
-          <div className="w-12 h-12 relative flex-shrink-0">
+        <div className="flex gap-1.5 sm:gap-2 md:gap-3 lg:gap-4 justify-center items-center min-w-0 w-full">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 relative flex-shrink-0">
             <img
               src={icon}
               alt=""
               className="w-full h-full object-contain"
             />
           </div>
-          <div className="flex-1">
-            <h3 className="text-white text-2xl md:text-3xl font-bold leading-8 font-sans text-center">
+          <div className="flex-1 min-w-0">
+            <h3 className="text-white text-base sm:text-lg md:text-2xl lg:text-3xl font-bold leading-snug sm:leading-relaxed md:leading-8 font-sans text-center break-words">
               {title}
             </h3>
           </div>
@@ -52,7 +52,7 @@ const CourseCard = ({
 
         {/* Description */}
         <div className="w-full">
-          <p className="text-white/71 text-xl leading-[30px] font-general-sans text-center break-words">
+          <p className="text-white/71 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl leading-5 sm:leading-6 md:leading-6 lg:leading-7 font-general-sans text-center break-words">
             {description}
           </p>
         </div>
@@ -60,13 +60,13 @@ const CourseCard = ({
 
       {/* Learn More Button */}
       {hasLearnMore && (
-        <div className="w-full relative">
-          <div className="flex flex-col gap-2.5 justify-center items-center cursor-pointer w-full">
+        <div className="w-full relative px-3 sm:px-6">
+          <div className="flex flex-col gap-1.5 sm:gap-2.5 justify-center items-center cursor-pointer w-full">
             <a
               href={learnMoreUrl}
-              className="flex gap-2.5 justify-center items-center bg-transparent border border-transparent rounded-lg px-6 py-3 relative z-10 min-w-0"
+              className="flex gap-1.5 sm:gap-2.5 justify-center items-center bg-transparent border border-transparent rounded-lg px-3 sm:px-6 py-1.5 sm:py-3 relative z-10 min-w-0"
             >
-              <p className="text-[#ffa545] text-xl font-semibold leading-6 tracking-[1.2px] font-general-sans text-center cursor-pointer whitespace-nowrap">
+              <p className="text-[#ffa545] text-xs sm:text-sm md:text-base lg:text-lg font-semibold leading-4 sm:leading-5 md:leading-6 tracking-[0.4px] sm:tracking-[0.8px] lg:tracking-[1.2px] font-general-sans text-center cursor-pointer whitespace-nowrap">
                 Learn More
               </p>
             </a>
@@ -118,21 +118,21 @@ interface CryptoCardProps {
 }
 
 const CryptoCard = ({ icon, title, description, imageSrc, imageAlt }: CryptoCardProps) => (
-  <div className="bg-[#131b23] rounded-lg flex flex-col justify-end overflow-hidden pt-18 relative z-[5] flex-1 min-w-0 gap-2.5 w-full h-full">
-    <div className="flex flex-col gap-10 justify-center items-center w-full">
+  <div className="bg-[#131b23] rounded-lg flex flex-col justify-end overflow-hidden pt-6 sm:pt-10 md:pt-14 relative z-[5] flex-1 min-w-0 gap-2.5 w-full h-full">
+    <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 lg:gap-10 justify-center items-center w-full">
       {/* Content Section */}
-      <div className="flex flex-col gap-8 justify-center items-center px-10 w-full">
+      <div className="flex flex-col gap-3 sm:gap-4 md:gap-6 lg:gap-8 justify-center items-center px-3 sm:px-6 md:px-10 w-full">
         {/* Icon and Title */}
-        <div className="flex gap-4 justify-center items-center w-full">
-          <div className="w-12 h-12 relative flex-shrink-0">
+        <div className="flex gap-1.5 sm:gap-2 md:gap-3 lg:gap-4 justify-center items-center w-full">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 relative flex-shrink-0">
             <img
               src={icon}
               alt=""
               className="w-full h-full object-contain"
             />
           </div>
-          <div className="flex-1">
-            <h3 className="text-white text-2xl md:text-3xl font-bold leading-8 font-sans text-center">
+          <div className="flex-1 min-w-0">
+            <h3 className="text-white text-base sm:text-lg md:text-2xl lg:text-3xl font-bold leading-snug sm:leading-relaxed md:leading-8 font-sans text-center">
               {title}
             </h3>
           </div>
@@ -140,7 +140,7 @@ const CryptoCard = ({ icon, title, description, imageSrc, imageAlt }: CryptoCard
 
         {/* Description */}
         <div className="w-full">
-          <p className="text-white/71 text-xl leading-[30px] font-general-sans text-center break-words">
+          <p className="text-white/71 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl leading-5 sm:leading-6 md:leading-6 lg:leading-7 font-general-sans text-center break-words">
             {description}
           </p>
         </div>
@@ -178,25 +178,24 @@ const CryptoCard = ({ icon, title, description, imageSrc, imageAlt }: CryptoCard
 );
 
 const FitnessCard = () => (
-  <div className="bg-[#131b23] rounded-lg flex flex-col justify-end overflow-hidden pt-13 relative z-[5] gap-2.5 w-full max-w-[663px]">
+  <div className="bg-[#131b23] rounded-lg flex flex-col justify-end overflow-hidden pt-6 sm:pt-10 md:pt-12 relative z-[5] gap-2.5 w-full max-w-[663px]">
     {/* NEW Badge */}
-    <div className="absolute top-4 right-[27px] z-10">
-      <p className="text-[#ffcf23] text-sm leading-[33px] font-inter">NEW</p>
+    <div className="absolute top-2 sm:top-4 right-4 sm:right-[27px] z-10">
+      <p className="text-[#ffcf23] text-xs sm:text-sm leading-7 sm:leading-[33px] font-inter">NEW</p>
     </div>
 
-    <div className="flex flex-col gap-10 justify-end w-full">
+    <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 lg:gap-10 justify-end w-full">
       {/* Content Section */}
-      <div className="flex flex-col gap-8 justify-center items-center px-10 w-full">
+      <div className="flex flex-col gap-3 sm:gap-4 md:gap-6 lg:gap-8 justify-center items-center px-3 sm:px-6 md:px-10 w-full">
         {/* Icon and Title */}
-        <div className="flex gap-4 justify-center items-center min-w-0">
-          <div className="w-12 h-12 relative flex-shrink-0">
-            {/* Fitness Icon - using a placeholder icon since SVG reference won't work */}
+        <div className="flex gap-1.5 sm:gap-2 md:gap-3 lg:gap-4 justify-center items-center min-w-0 w-full">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 relative flex-shrink-0">
             <div className="w-full h-full bg-white/10 rounded flex items-center justify-center">
-              <span className="text-white text-xl">💪</span>
+              <span className="text-white text-lg sm:text-xl">💪</span>
             </div>
           </div>
-          <div className="flex-1">
-            <h3 className="text-white text-2xl md:text-3xl font-semibold leading-8 font-sans text-center">
+          <div className="flex-1 min-w-0">
+            <h3 className="text-white text-base sm:text-lg md:text-2xl lg:text-3xl font-semibold leading-snug sm:leading-relaxed md:leading-8 font-sans text-center">
               Fitness
             </h3>
           </div>
@@ -204,7 +203,7 @@ const FitnessCard = () => (
 
         {/* Description */}
         <div className="flex flex-col justify-start overflow-wrap break-word w-full">
-          <p className="text-white/74 text-xl leading-[30px] font-general-sans text-center break-words">
+          <p className="text-white/74 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl leading-5 sm:leading-6 md:leading-6 lg:leading-7 font-general-sans text-center break-words">
             <span className="text-white font-semibold">The Real World</span>
             {' '}approach to fitness focuses on sculpting a{' '}
             <span className="text-white font-semibold">disciplined, resilient character,</span>
@@ -246,10 +245,10 @@ interface WhatYouLearnSectionProps {
 
 export default function WhatYouLearnSection({ topText = "WHAT YOU'LL LEARN" }: WhatYouLearnSectionProps) {
   return (
-    <section className="flex flex-col items-center justify-center w-full bg-[#060e15] relative gap-10 pt-8">
+    <section className="flex flex-col items-center justify-center w-full bg-[#060e15] relative gap-4 sm:gap-6 md:gap-8 pt-4 sm:pt-8">
       {/* Background Image */}
       <div
-        className="absolute left-1/2 top-0 w-full z-0"
+        className="absolute left-1/2 top-0 w-full z-0 opacity-40 sm:opacity-60 lg:opacity-100"
         style={{
           aspectRatio: '2.22042 / 1',
           transform: 'matrix(1, 0, 0, 1, -952.5, 0)'
@@ -267,14 +266,14 @@ export default function WhatYouLearnSection({ topText = "WHAT YOU'LL LEARN" }: W
       {/* Gradient Overlay */}
       <div
         className="absolute left-0 top-0 w-full z-[4] bg-gradient-to-b from-[#060e15] to-transparent"
-        style={{ height: '376.435px' }}
+        style={{ height: 'clamp(200px, 30vh, 376.435px)' }}
       />
 
       {/* Header Content */}
-      <div className="flex flex-col items-center justify-center gap-3 overflow-hidden relative w-full z-[7] px-4">
+      <div className="flex flex-col items-center justify-center gap-1.5 sm:gap-2.5 md:gap-3 overflow-hidden relative w-full z-[7] px-4 sm:px-6 md:px-8 pt-6 sm:pt-8 md:pt-12">
         <div className="contents">
           <div className="flex flex-col justify-start overflow-wrap break-word relative w-full">
-            <h2 className="text-white text-3xl md:text-5xl font-bold leading-tight md:leading-[67px] font-sans text-center break-words">
+            <h2 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-6 sm:leading-8 md:leading-[50px] lg:leading-[67px] font-sans text-center break-words">
               {topText.includes(':') ? (
                 <>
                   {topText.split(':')[0]}:
@@ -288,10 +287,10 @@ export default function WhatYouLearnSection({ topText = "WHAT YOU'LL LEARN" }: W
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center gap-6 overflow-hidden relative w-full max-w-4xl">
+        <div className="flex flex-col items-center justify-center gap-2 sm:gap-3 md:gap-4 overflow-hidden relative w-full max-w-4xl">
           <div className="contents">
             <div className="flex flex-col justify-start overflow-wrap break-word relative w-full">
-              <p className="text-white/60 text-lg md:text-2xl leading-relaxed md:leading-[38.4px] font-sans text-center break-words">
+              <p className="text-white/60 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl leading-5 sm:leading-6 md:leading-7 lg:leading-[38.4px] font-sans text-center break-words">
                 When a new technology revolutionizes an industry,
               </p>
             </div>
@@ -299,13 +298,13 @@ export default function WhatYouLearnSection({ topText = "WHAT YOU'LL LEARN" }: W
 
           <div className="contents">
             <div className="flex flex-col justify-start overflow-wrap break-word relative w-full">
-              <p className="text-white/60 text-lg md:text-2xl leading-relaxed md:leading-[38.4px] font-sans text-center break-words">
+              <p className="text-white/60 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl leading-5 sm:leading-6 md:leading-7 lg:leading-[38.4px] font-sans text-center break-words">
                 <span className="text-white font-semibold">
                   <strong className="font-black">THE REAL WORLD will</strong>
                 </span>
                 {' '}be the first and only place to teach you
               </p>
-              <p className="text-white text-lg md:text-2xl font-semibold leading-relaxed md:leading-[38.4px] font-sans text-center break-words">
+              <p className="text-white text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold leading-5 sm:leading-6 md:leading-7 lg:leading-[38.4px] font-sans text-center break-words">
                 <strong className="font-black">how to take advantage of it.</strong>
               </p>
             </div>
@@ -313,7 +312,7 @@ export default function WhatYouLearnSection({ topText = "WHAT YOU'LL LEARN" }: W
 
           <div className="contents">
             <div className="flex flex-col justify-start overflow-wrap break-word relative w-full">
-              <p className="text-white/60 text-lg md:text-2xl leading-relaxed md:leading-[38.4px] font-sans text-center break-words">
+              <p className="text-white/60 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl leading-5 sm:leading-6 md:leading-7 lg:leading-[38.4px] font-sans text-center break-words">
                 Our students receive the latest information at 8am every day.
               </p>
             </div>
@@ -322,9 +321,9 @@ export default function WhatYouLearnSection({ topText = "WHAT YOU'LL LEARN" }: W
       </div>
 
       {/* Courses Grid */}
-      <div className="flex flex-col items-center justify-center gap-6 overflow-hidden relative w-full max-w-[1350px] z-[2] px-4">
+      <div className="flex flex-col items-center justify-center gap-3 sm:gap-4 md:gap-5 lg:gap-6 overflow-hidden relative w-full max-w-[1350px] z-[2] px-4 sm:px-6 md:px-8 pb-8">
         {/* First Row */}
-        <div className="flex flex-col md:flex-row gap-6 justify-center items-stretch overflow-hidden relative w-full z-[2]">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 lg:gap-6 justify-center items-stretch overflow-hidden relative w-full z-[2]">
           <CourseCard
             icon="https://framerusercontent.com/images/yAaF4PyoOyGOCscoBed19POZGg.svg?width=64&height=60"
             title="E-COMMERCE"
@@ -353,7 +352,7 @@ export default function WhatYouLearnSection({ topText = "WHAT YOU'LL LEARN" }: W
         </div>
 
         {/* Second Row */}
-        <div className="flex flex-col md:flex-row gap-6 justify-center items-stretch overflow-hidden relative w-full">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 lg:gap-6 justify-center items-stretch overflow-hidden relative w-full">
           <CourseCard
             icon="https://framerusercontent.com/images/p2E8ax8QS6Jo7rWAso7OPZ8nIEY.svg?width=61&height=55"
             title="STOCKS"
@@ -388,8 +387,8 @@ export default function WhatYouLearnSection({ topText = "WHAT YOU'LL LEARN" }: W
         </div>
 
         {/* Third Row - Crypto Cards */}
-        <div className="flex flex-col md:flex-row gap-6 justify-center items-stretch overflow-hidden relative w-full max-w-[1360px]">
-          <div className="w-full md:w-1/2">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 lg:gap-6 justify-center items-stretch overflow-hidden relative w-full max-w-[1360px]">
+          <div className="w-full sm:w-1/2">
             <CryptoCard
               icon="https://framerusercontent.com/images/CCd2yxjHWeQgd5CAjtT9UIlRI.svg?width=67&height=60"
               title="CRYPTO INVESTING"
@@ -404,7 +403,7 @@ export default function WhatYouLearnSection({ topText = "WHAT YOU'LL LEARN" }: W
             />
           </div>
 
-          <div className="w-full md:w-1/2">
+          <div className="w-full sm:w-1/2">
             <CryptoCard
               icon="https://framerusercontent.com/images/CCd2yxjHWeQgd5CAjtT9UIlRI.svg?width=67&height=60"
               title="CRYPTO TRADING"
@@ -422,7 +421,7 @@ export default function WhatYouLearnSection({ topText = "WHAT YOU'LL LEARN" }: W
         </div>
 
         {/* Fourth Row */}
-        <div className="flex flex-col md:flex-row gap-6 justify-center items-stretch overflow-hidden relative w-full">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 lg:gap-6 justify-center items-stretch overflow-hidden relative w-full">
           <CourseCard
             icon="https://framerusercontent.com/images/2rwYTW18m5Q6MWGh0NbgGuI1B0.svg?width=61&height=59"
             title="CONTENT CREATION & AI"
@@ -442,8 +441,8 @@ export default function WhatYouLearnSection({ topText = "WHAT YOU'LL LEARN" }: W
           <CourseCard
             icon="https://framerusercontent.com/images/iMoSMCXp3TxaY7IKLuU1aJlf3k.svg?width=67&height=65"
             title={
-              <div className="text-base leading-8">
-                <span className="text-[32px] leading-8">CLIENT ACQUISITION</span>
+              <div className="text-sm sm:text-base leading-6 sm:leading-8">
+                <span className="text-xl sm:text-[32px] leading-6 sm:leading-8">CLIENT ACQUISITION</span>
                 <br />
                 <span className="font-medium">&</span>
                 <span className="font-bold">SOCIAL MEDIA</span>

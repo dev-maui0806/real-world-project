@@ -33,13 +33,108 @@ export default function FAQSection() {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: '64px',
-        paddingTop: '96px',
-        paddingBottom: '64px',
         width: '100%',
         position: 'relative',
+        paddingTop: 'clamp(2rem, 8vw, 6rem)',
+        paddingBottom: 'clamp(2rem, 6vw, 4rem)',
+        gap: 'clamp(2rem, 8vw, 4rem)',
       }}
     >
+      <style>{`
+        @media (max-width: 640px) {
+          .faq-heading {
+            font-size: 1.75rem;
+            line-height: 2.1rem;
+          }
+          .faq-button {
+            padding: 1rem 1rem;
+            gap: 1rem;
+            min-height: 50px;
+          }
+          .faq-question {
+            font-size: 0.9375rem;
+            line-height: 1.4rem;
+          }
+          .faq-cta-button {
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            letter-spacing: 0.4px;
+          }
+          .faq-social-proof {
+            flex-direction: column;
+            gap: 0.75rem;
+            height: auto;
+          }
+          .faq-social-text {
+            font-size: 0.875rem;
+            line-height: 1.125rem;
+          }
+          .faq-avatar-container {
+            width: 80px;
+          }
+        }
+        @media (min-width: 641px) and (max-width: 1024px) {
+          .faq-heading {
+            font-size: 2rem;
+            line-height: 2.4rem;
+          }
+          .faq-button {
+            padding: 1.25rem 1.75rem;
+            gap: 1.25rem;
+            min-height: 55px;
+          }
+          .faq-question {
+            font-size: 1rem;
+            line-height: 1.5rem;
+          }
+          .faq-cta-button {
+            padding: 1.25rem 2rem;
+            font-size: 1.125rem;
+            letter-spacing: 0.6px;
+          }
+          .faq-social-proof {
+            gap: 0.75rem;
+          }
+          .faq-social-text {
+            font-size: 1rem;
+            line-height: 1.125rem;
+          }
+          .faq-avatar-container {
+            width: 85px;
+          }
+        }
+        @media (min-width: 1025px) {
+          .faq-heading {
+            font-size: 2.25rem;
+            line-height: 2.7rem;
+          }
+          .faq-button {
+            padding: 1.25rem 2.5rem;
+            gap: 1.5rem;
+            min-height: 60px;
+          }
+          .faq-question {
+            font-size: 1rem;
+            line-height: 1.5rem;
+          }
+          .faq-cta-button {
+            padding: 1.25rem 2.125rem;
+            font-size: 1.5rem;
+            letter-spacing: 0.75px;
+          }
+          .faq-social-proof {
+            gap: 0.5rem;
+          }
+          .faq-social-text {
+            font-size: 1.125rem;
+            line-height: 1.25rem;
+          }
+          .faq-avatar-container {
+            width: 100px;
+          }
+        }
+      `}</style>
+
       {/* Heading */}
       <div
         style={{
@@ -49,18 +144,21 @@ export default function FAQSection() {
           whiteSpace: 'pre-wrap',
           wordBreak: 'break-word',
           overflowWrap: 'break-word',
+          paddingLeft: 'clamp(1rem, 5vw, 2rem)',
+          paddingRight: 'clamp(1rem, 5vw, 2rem)',
         }}
       >
         <h2
+          className="faq-heading"
           style={{
             fontFamily: '"General Sans", sans-serif',
-            fontSize: '36px',
-            lineHeight: '43.2px',
             color: 'rgb(255, 255, 255)',
             textAlign: 'center',
             whiteSpace: 'pre-wrap',
             wordBreak: 'break-word',
             overflowWrap: 'break-word',
+            margin: 0,
+            fontWeight: 400,
           }}
         >
           FREQUENTLY ASKED{'\n'}
@@ -75,11 +173,11 @@ export default function FAQSection() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: '10px',
+          gap: '0.625rem',
           maxWidth: '1000px',
           width: '100%',
-          paddingLeft: '20px',
-          paddingRight: '20px',
+          paddingLeft: 'clamp(1rem, 5vw, 2rem)',
+          paddingRight: 'clamp(1rem, 5vw, 2rem)',
           position: 'relative',
           zIndex: 2,
         }}
@@ -89,7 +187,7 @@ export default function FAQSection() {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '12px',
+            gap: '0.75rem',
             width: '100%',
             alignItems: 'center',
             justifyContent: 'center',
@@ -114,19 +212,18 @@ export default function FAQSection() {
                 {/* Accordion Button */}
                 <button
                   onClick={() => toggleAccordion(item.id)}
+                  className="faq-button"
                   style={{
                     backgroundColor: 'rgb(5, 14, 21)',
                     borderRadius: '10px',
-                    padding: '20px 40px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'flex-start',
-                    gap: '24px',
                     width: '100%',
                     cursor: 'pointer',
                     userSelect: 'none',
                     border: 'none',
-                    minHeight: '60px',
+                    transition: 'background-color 0.2s ease',
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = 'rgb(8, 18, 28)';
@@ -149,11 +246,10 @@ export default function FAQSection() {
                     }}
                   >
                     <p
+                      className="faq-question"
                       style={{
                         fontFamily: 'Inter, sans-serif',
-                        fontSize: '16px',
                         fontWeight: 600,
-                        lineHeight: '24px',
                         color: 'rgb(255, 255, 255)',
                         margin: 0,
                         textAlign: 'left',
@@ -221,8 +317,11 @@ export default function FAQSection() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: '10px',
+          gap: '0.625rem',
           position: 'relative',
+          paddingLeft: 'clamp(1rem, 5vw, 2rem)',
+          paddingRight: 'clamp(1rem, 5vw, 2rem)',
+          width: '100%',
         }}
       >
         {/* Main Button */}
@@ -232,7 +331,6 @@ export default function FAQSection() {
           style={{
             backgroundImage: 'linear-gradient(95deg, rgb(255, 169, 48) 0%, rgb(255, 171, 35) 51.2387%, rgb(213, 170, 18) 113.52%)',
             borderRadius: '10px',
-            padding: '20px 34px',
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -240,18 +338,16 @@ export default function FAQSection() {
             willChange: 'transform',
             zIndex: 1,
           }}
-          className="hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+          className="faq-cta-button hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
         >
           <p
             style={{
               fontFamily: '"General Sans", sans-serif',
-              fontSize: '24px',
               fontWeight: 700,
-              letterSpacing: '1.2px',
-              lineHeight: '24px',
+              lineHeight: '1.5rem',
               textAlign: 'center',
               textTransform: 'uppercase',
-              whiteSpace: 'pre',
+              whiteSpace: 'nowrap',
               margin: 0,
             }}
             className="text-black"
@@ -262,20 +358,19 @@ export default function FAQSection() {
 
         {/* Social Proof Section */}
         <div
+          className="faq-social-proof"
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '8px',
-            height: '32px',
             position: 'relative',
           }}
         >
           {/* User Avatars */}
           <div
+            className="faq-avatar-container"
             style={{
               position: 'relative',
-              width: '100px',
               aspectRatio: '3.17143 / 1',
             }}
           >
@@ -296,12 +391,11 @@ export default function FAQSection() {
 
           {/* Text */}
           <p
+            className="faq-social-text"
             style={{
               fontFamily: '"General Sans", sans-serif',
-              fontSize: '18px',
-              lineHeight: '20px',
               color: 'rgba(255, 255, 255, 0.6)',
-              whiteSpace: 'pre',
+              whiteSpace: 'pre-wrap',
               margin: 0,
             }}
           >

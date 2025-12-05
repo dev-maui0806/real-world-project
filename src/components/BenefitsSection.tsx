@@ -119,45 +119,75 @@ export default function BenefitsSection({
   benefits,
 }: BenefitsSectionProps) {
   return (
-    <section className="w-full bg-[#050e15] flex flex-col items-center py-28 px-8 gap-20">
+    <section className="w-full bg-[#050e15] flex flex-col items-center py-8 sm:py-16 lg:py-28 px-4 sm:px-8 gap-8 sm:gap-12 lg:gap-20">
+      <style>{`
+        @media (max-width: 640px) {
+          .benefits-title { font-size: 1.75rem; line-height: 2.1rem; }
+          .benefits-subtitle { font-size: 1.75rem; line-height: 2.1rem; }
+          .benefits-label { font-size: 1rem; line-height: 1.25rem; }
+          .benefits-icon-box { width: 2.5rem; height: 2.5rem; }
+          .benefits-icon { width: 1.25rem; height: 1.25rem; }
+          .benefits-grid-row { gap: 1rem; }
+          .benefits-grid { gap: 1rem; }
+        }
+        @media (min-width: 641px) and (max-width: 1024px) {
+          .benefits-title { font-size: 2.25rem; line-height: 2.7rem; }
+          .benefits-subtitle { font-size: 2.25rem; line-height: 2.7rem; }
+          .benefits-label { font-size: 1.25rem; line-height: 1.5rem; }
+          .benefits-icon-box { width: 3rem; height: 3rem; }
+          .benefits-icon { width: 1.5rem; height: 1.5rem; }
+          .benefits-grid-row { gap: 1.5rem; }
+          .benefits-grid { gap: 2rem; }
+        }
+        @media (min-width: 1025px) {
+          .benefits-title { font-size: 2.9375rem; line-height: 3.4375rem; }
+          .benefits-subtitle { font-size: 2.9375rem; line-height: 3.4375rem; }
+          .benefits-label { font-size: 1.5rem; line-height: 1.75rem; }
+          .benefits-icon-box { width: 3rem; height: 3rem; }
+          .benefits-icon { width: 1.5rem; height: 1.5rem; }
+          .benefits-grid-row { gap: 3rem; }
+          .benefits-grid { gap: 4rem; }
+        }
+      `}</style>
+
       {/* Header Section */}
-      <div className="w-full flex flex-col items-center gap-16">
-        <div className="w-full max-w-[1200px] flex flex-col items-center gap-4">
-          <h2 className="text-center text-[47px] font-bold leading-[55px] text-white">
+      <div className="w-full flex flex-col items-center gap-6 sm:gap-8 lg:gap-16">
+        <div className="w-full max-w-[1200px] flex flex-col items-center gap-2 sm:gap-4">
+          <h2 className="benefits-title text-center font-bold text-white">
             {title}
           </h2>
         </div>
 
-        <div className="flex flex-col items-center gap-4">
-          <p className="text-center text-[47px] font-bold leading-[55px] text-white whitespace-nowrap">
+        <div className="flex flex-col items-center gap-2 sm:gap-4">
+          <p className="benefits-subtitle text-center font-bold text-white whitespace-normal sm:whitespace-nowrap">
             {subtitle}
           </p>
         </div>
       </div>
 
       {/* Benefits Grid */}
-      <div className="w-full max-w-[1440px] flex flex-col items-center gap-16">
+      <div className="w-full max-w-[1440px] flex flex-col items-center benefits-grid">
         {/* First Row - 3 items */}
-        <div className="w-full flex gap-12 justify-center">
+        <div className="w-full flex benefits-grid-row justify-center flex-wrap">
           {benefits.slice(0, 3).map((benefit, index) => (
-            <div key={index} className="flex flex-col items-center gap-4 flex-1">
+            <div key={index} className="flex flex-col items-center gap-2 sm:gap-4 flex-1 min-w-[150px] sm:min-w-auto">
               {/* Icon/Image Container */}
-              <div className="relative w-12 h-12 flex items-center justify-center rounded-[6px] bg-gradient-to-b from-[#ffbc47] to-[#ffa545] shadow-[0px_4px_8px_rgba(255,165,69,0.36)]">
+              <div className="benefits-icon-box relative flex items-center justify-center rounded-[6px] bg-gradient-to-b from-[#ffbc47] to-[#ffa545] shadow-[0px_4px_8px_rgba(255,165,69,0.36)] flex-shrink-0">
                 {benefit.image ? (
                   <img
                     src={benefit.image}
                     alt={benefit.label}
-                    className="w-[30px] h-[30px] object-cover"
+                    className="w-[60%] h-[60%] object-cover"
                   />
                 ) : (
-                  <div className="text-[#131313] flex items-center justify-center w-6 h-6">
+                  <div className="benefits-icon text-[#131313] flex items-center justify-center">
                     {benefit.icon}
                   </div>
                 )}
               </div>
 
               {/* Label */}
-              <p className="text-center text-[24px] font-semibold leading-[28px] text-white">
+              <p className="benefits-label text-center font-semibold text-white">
                 {benefit.label}
               </p>
             </div>
@@ -165,26 +195,26 @@ export default function BenefitsSection({
         </div>
 
         {/* Second Row - 3 items */}
-        <div className="w-full flex gap-12 justify-center">
+        <div className="w-full flex benefits-grid-row justify-center flex-wrap">
           {benefits.slice(3).map((benefit, index) => (
-            <div key={index + 3} className="flex flex-col items-center gap-4 flex-1">
+            <div key={index + 3} className="flex flex-col items-center gap-2 sm:gap-4 flex-1 min-w-[150px] sm:min-w-auto">
               {/* Icon/Image Container */}
-              <div className="relative w-12 h-12 flex items-center justify-center rounded-[6px] bg-gradient-to-b from-[#ffbc47] to-[#ffa545] shadow-[0px_4px_8px_rgba(255,165,69,0.36)]">
+              <div className="benefits-icon-box relative flex items-center justify-center rounded-[6px] bg-gradient-to-b from-[#ffbc47] to-[#ffa545] shadow-[0px_4px_8px_rgba(255,165,69,0.36)] flex-shrink-0">
                 {benefit.image ? (
                   <img
                     src={benefit.image}
                     alt={benefit.label}
-                    className="w-[30px] h-[30px] object-cover"
+                    className="w-[60%] h-[60%] object-cover"
                   />
                 ) : (
-                  <div className="text-[#131313] flex items-center justify-center w-6 h-6">
+                  <div className="benefits-icon text-[#131313] flex items-center justify-center">
                     {benefit.icon}
                   </div>
                 )}
               </div>
 
               {/* Label */}
-              <p className="text-center text-[24px] font-semibold leading-[28px] text-white">
+              <p className="benefits-label text-center font-semibold text-white">
                 {benefit.label}
               </p>
             </div>
