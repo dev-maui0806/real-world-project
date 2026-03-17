@@ -26,198 +26,401 @@ export default function RoadmapSection({
   ctaHref,
   steps,
 }: RoadmapSectionProps) {
+  // Calculate dynamic transform values for decorative bars
+  const barTransforms = [498, -145.25, -218, 277, -623];
+
   return (
-    <section className="w-full bg-[#060e15] flex flex-col items-center overflow-hidden" aria-label="Timeline Section">
+    <section className="w-full bg-transparent flex flex-col items-center overflow-hidden" aria-label="Roadmap Section">
       <style>{`
-        @media (max-width: 640px) {
-          .roadmap-header-padding { padding: 2rem 1rem; }
-          .roadmap-title { font-size: 1.75rem; line-height: 2.1rem; }
-          .roadmap-description { font-size: 1rem; line-height: 1.5rem; }
-          .roadmap-cta { padding: 0.75rem 1rem; font-size: 0.9rem; }
-          .roadmap-step-number { font-size: 2rem; line-height: 2.4rem; }
-          .roadmap-step-label { font-size: 0.75rem; }
-          .roadmap-step-title { font-size: 1.25rem; line-height: 1.5rem; }
-          .roadmap-step-description { font-size: 0.9375rem; line-height: 1.2rem; }
-          .roadmap-steps { gap: 0; }
-          .roadmap-step-row { flex-direction: column; gap: 1.5rem; }
-          .roadmap-step-left { max-width: 100%; }
-          .roadmap-step-center { display: none; }
-          .roadmap-step-right { max-width: 100%; }
-          .roadmap-timeline { min-height: 120px; }
-          .roadmap-step-content { padding-bottom: 2rem; min-height: auto; }
+        .roadmap-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          max-width: 1280px;
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0);
+          font-family: sans-serif;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: normal;
+          gap: 20px;
+          padding: 20px;
+          padding-top: 96px;
+          overflow-x: hidden;
+          overflow-y: hidden;
+          margin: 0 auto;
         }
-        @media (min-width: 641px) and (max-width: 1024px) {
-          .roadmap-header-padding { padding: 3rem 2rem; }
-          .roadmap-title { font-size: 2rem; line-height: 2.4rem; }
-          .roadmap-description { font-size: 1.125rem; line-height: 1.6rem; }
-          .roadmap-cta { padding: 0.875rem 1.5rem; font-size: 1rem; }
-          .roadmap-step-number { font-size: 2.5rem; line-height: 3rem; }
-          .roadmap-step-label { font-size: 0.875rem; }
-          .roadmap-step-title { font-size: 1.5rem; line-height: 1.8rem; }
-          .roadmap-step-description { font-size: 1rem; line-height: 1.4rem; }
-          .roadmap-steps { gap: 0; }
-          .roadmap-step-row { flex-direction: column; gap: 2rem; }
-          .roadmap-step-left { max-width: 100%; }
-          .roadmap-step-center { display: none; }
-          .roadmap-step-right { max-width: 100%; }
-          .roadmap-timeline { min-height: 180px; }
-          .roadmap-step-content { padding-bottom: 3rem; min-height: auto; }
+
+        .roadmap-header {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
         }
-        @media (min-width: 1025px) {
-          .roadmap-header-padding { padding: 6rem 2rem; }
-          .roadmap-title { font-size: 2.25rem; line-height: 2.7rem; }
-          .roadmap-description { font-size: 1.25rem; line-height: 1.75rem; }
-          .roadmap-cta { padding: 1rem 2rem; font-size: 1.3rem; }
-          .roadmap-step-number { font-size: 4rem; line-height: 4.8rem; }
-          .roadmap-step-label { font-size: 0.875rem; }
-          .roadmap-step-title { font-size: 2.25rem; line-height: 3.375rem; }
-          .roadmap-step-description { font-size: 1rem; line-height: 1.2rem; }
-          .roadmap-steps { gap: 0; }
-          .roadmap-step-row { flex-direction: row; gap: 3rem; }
-          .roadmap-step-left { max-width: 610px; }
-          .roadmap-step-center { display: flex; }
-          .roadmap-step-right { max-width: 610px; }
-          .roadmap-timeline { min-height: 340.5px; }
-          .roadmap-step-content { padding-bottom: 2rem; min-height: 385px; }
+
+        .roadmap-title {
+          font-family: Inter, sans-serif;
+          font-size: 36px;
+          font-weight: 600;
+          letter-spacing: -0.5px;
+          line-height: 54px;
+          color: rgb(255, 255, 255);
+          text-align: center;
+          margin: 0;
+        }
+
+        .roadmap-description {
+          font-family: Inter, sans-serif;
+          font-size: 16px;
+          line-height: 19.2px;
+          color: rgba(255, 255, 255, 0.8);
+          max-width: 700px;
+          width: 100%;
+          text-align: center;
+          margin: 0;
+        }
+
+        .roadmap-cta-button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          padding: 12px 24px;
+          border-radius: 10px;
+          cursor: pointer;
+          background: linear-gradient(0deg, rgb(255, 165, 69) 0%, rgb(255, 188, 71) 100%);
+          box-shadow: rgba(201, 108, 8, 0.3) 0px 4px 50px 0px;
+          text-decoration: none;
+          transition: opacity 0.2s;
+        }
+
+        .roadmap-cta-button:hover {
+          opacity: 0.9;
+        }
+
+        .roadmap-cta-text {
+          color: rgb(19, 19, 19);
+          font-family: Inter, sans-serif;
+          font-weight: 600;
+          font-size: 14px;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+          line-height: 20.8px;
+          margin: 0;
+        }
+
+        .roadmap-steps-container {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .roadmap-step {
+          display: flex;
+          align-content: flex-start;
+          align-items: flex-start;
+          gap: 48px;
+          width: 100%;
+          z-index: 1;
+          overflow: hidden;
+        }
+
+        .roadmap-step-left-empty {
+          display: flex;
+          flex-basis: 0;
+          flex-grow: 1;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 24px;
+          max-width: 610px;
+          min-height: 385px;
+          padding-bottom: 128px;
+          overflow: hidden;
+          width: 1px;
+          will-change: transform;
+          transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 0, 0, 1);
+        }
+
+        .roadmap-step-left-content {
+          display: flex;
+          flex-basis: 0;
+          flex-grow: 1;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          gap: 24px;
+          max-width: 610px;
+          overflow: hidden;
+          padding-bottom: 128px;
+          width: 1px;
+          will-change: transform;
+          transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 0, 0, 1);
+        }
+
+        .roadmap-step-center {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+          width: 100px;
+          align-self: stretch;
+          flex-shrink: 0;
+          overflow: hidden;
+        }
+
+        .roadmap-step-number-wrapper {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          text-wrap: nowrap;
+          white-space: pre;
+          position: relative;
+          will-change: transform;
+          transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 0, 0, 1);
+        }
+
+        .roadmap-step-number {
+          color: rgb(255, 255, 255);
+          font-family: Inter, sans-serif;
+          font-size: 64px;
+          font-weight: 700;
+          letter-spacing: -0.5px;
+          line-height: 76.8px;
+          text-wrap: nowrap;
+          white-space: pre;
+          margin: 0;
+        }
+
+        .roadmap-step-bar-container {
+          background-color: rgba(255, 255, 255, 0.05);
+          flex-basis: 0;
+          flex-grow: 1;
+          gap: 0;
+          height: 1px;
+          overflow: hidden;
+          width: 3px;
+          z-index: 0;
+          position: relative;
+        }
+
+        .roadmap-step-bar {
+          background-color: rgb(255, 165, 69);
+          height: 476.5px;
+          width: 100%;
+          overflow: hidden;
+          position: relative;
+          will-change: transform;
+        }
+
+        .roadmap-step-bar-center {
+          background-color: rgb(255, 165, 69);
+          height: 476.5px;
+          left: 0;
+          right: 0;
+          top: 0;
+          overflow: hidden;
+          position: absolute;
+          will-change: transform;
+        }
+
+        .roadmap-step-content-group {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 4px;
+          width: 100%;
+          height: min-content;
+          overflow: hidden;
+        }
+
+        .roadmap-step-label {
+          color: rgb(255, 165, 69);
+          font-family: Inter, sans-serif;
+          letter-spacing: 0.5px;
+          line-height: 18px;
+          overflow-wrap: break-word;
+          text-transform: uppercase;
+          white-space: pre-wrap;
+          word-break: break-word;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          margin: 0;
+        }
+
+        .roadmap-step-title {
+          color: rgb(255, 255, 255);
+          font-family: Inter, sans-serif;
+          font-size: 36px;
+          font-weight: 600;
+          letter-spacing: -0.5px;
+          line-height: 54px;
+          overflow-wrap: break-word;
+          white-space: pre-wrap;
+          word-break: break-word;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          margin: 0;
+        }
+
+        .roadmap-step-description {
+          color: rgba(255, 255, 255, 0.8);
+          font-family: Inter, sans-serif;
+          font-size: 16px;
+          line-height: 19.2px;
+          overflow-wrap: break-word;
+          white-space: pre-wrap;
+          word-break: break-word;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          margin: 0;
+        }
+
+        @media (max-width: 1024px) {
+          .roadmap-container {
+            padding: 20px;
+            padding-top: 40px;
+            gap: 20px;
+          }
+
+          .roadmap-step {
+            flex-direction: column;
+            gap: 20px;
+          }
+
+          .roadmap-step-center {
+            display: none;
+          }
+
+          .roadmap-step-left-content,
+          .roadmap-step-left-empty {
+            width: 100%;
+            max-width: 100%;
+            flex-basis: auto;
+            flex-grow: 0;
+            min-height: auto;
+            padding-bottom: 20px;
+          }
+
+          .roadmap-title {
+            font-size: 28px;
+            line-height: 36px;
+          }
+
+          .roadmap-description {
+            font-size: 14px;
+            line-height: 18px;
+          }
+
+          .roadmap-step-number {
+            font-size: 48px;
+            line-height: 57.6px;
+          }
+
+          .roadmap-step-title {
+            font-size: 24px;
+            line-height: 32px;
+          }
         }
       `}</style>
 
-      {/* Header Section */}
-      <div className="roadmap-header-padding w-full flex flex-col items-center">
-        <div className="max-w-[1280px] w-full flex flex-col items-center gap-4 sm:gap-8">
-          {/* Title */}
-          <div className="flex flex-col max-w-[900px] w-full px-4 sm:px-0">
-            <h2 className="roadmap-title text-center font-bold tracking-tight text-white">
-              <span className="text-white">{title}</span>
-              <br />
-              <span className="text-white">{subtitle}</span>
-            </h2>
-          </div>
-
-          {/* Description */}
-          <div className="max-w-[700px] w-full px-4 sm:px-0">
-            <p className="roadmap-description text-center font-medium text-white/80">
-              {description}
-            </p>
-          </div>
-
-          {/* CTA Button */}
-          <div className="relative z-5 px-4 sm:px-0">
-            <a
-              href={ctaHref}
-              rel="noopener"
-              className="roadmap-cta inline-flex items-center justify-center gap-2 rounded-[10px] cursor-pointer hover:opacity-90 transition-opacity whitespace-nowrap"
-              style={{
-                backgroundImage: 'linear-gradient(0deg, rgb(255, 165, 69) 0%, rgb(255, 188, 71) 100%)',
-                boxShadow: 'rgba(201, 108, 8, 0.3) 0px 4px 50px 0px'
-              }}
+      <div className="roadmap-container">
+        {/* Header Section */}
+        <div className="roadmap-header">
+          <h2 className="roadmap-title">
+            {title}
+            <br />
+            {subtitle}
+          </h2>
+          <p className="roadmap-description">{description}</p>
+          <a href={ctaHref} className="roadmap-cta-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              fill="currentColor"
+              style={{ color: 'rgb(19, 19, 19)' }}
             >
-              {/* Left Arrow Icon */}
-              <div className="h-6 w-6 sm:h-10 sm:w-10 flex items-center justify-center flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" focusable="false" viewBox="0 0 24 24" className="w-full h-full" style={{
-                  fill: 'rgb(19, 19, 19)',
-                  color: 'rgb(19, 19, 19)'
-                }}>
-                  <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path>
-                </svg>
-              </div>
-
-              {/* Text */}
-              <p className="font-semibold leading-[20.8px] uppercase select-none" style={{
-                color: 'rgb(19, 19, 19)'
-              }}>
-                {ctaText}
-              </p>
-
-              {/* Right Arrow Icon */}
-              <div className="h-6 w-6 sm:h-10 sm:w-10 flex items-center justify-center flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" focusable="false" viewBox="0 0 24 24" className="w-full h-full" style={{
-                  fill: 'rgb(19, 19, 19)',
-                  color: 'rgb(19, 19, 19)'
-                }}>
-                  <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
-                </svg>
-              </div>
-            </a>
-          </div>
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+            </svg>
+            <p className="roadmap-cta-text">{ctaText}</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              fill="currentColor"
+              style={{ color: 'rgb(19, 19, 19)' }}
+            >
+              <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+            </svg>
+          </a>
         </div>
-      </div>
 
-      {/* Timeline Section */}
-      <div className="w-full flex flex-col items-center gap-2 sm:gap-5 pt-8 sm:pt-24 px-4 sm:px-5">
-        <div className="max-w-[1280px] w-full roadmap-steps flex flex-col">
-          {steps.map((step, index) => (
-            <div key={index} className="roadmap-step-row w-full flex items-stretch">
-              {/* Left Column */}
-              <div className="roadmap-step-left flex flex-col gap-3 sm:gap-6 roadmap-step-content" style={{
-                willChange: 'transform',
-                transform: 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 0, 0, 1)'
-              }}>
-                {index % 2 === 1 && (
-                  <>
-                    <div className="flex flex-col gap-0.5 sm:gap-1">
-                      <p className="roadmap-step-label uppercase tracking-[0.5px] text-[#ffa545]">
-                        {step.label}
-                      </p>
-                      <h3 className="roadmap-step-title font-semibold tracking-[-0.5px] text-white">
-                        {step.title}
-                      </h3>
+        {/* Steps Container */}
+        <div className="roadmap-steps-container">
+          {steps.map((step, index) => {
+            const isLeftContent = index % 2 === 1;
+
+            return (
+              <div key={index} className="roadmap-step">
+                {/* Left Column */}
+                {isLeftContent ? (
+                  <div className="roadmap-step-left-content">
+                    <div className="roadmap-step-content-group">
+                      <p className="roadmap-step-label">{step.label}</p>
+                      <h3 className="roadmap-step-title">{step.title}</h3>
                     </div>
-                    <p className="roadmap-step-description text-white/80">
-                      {step.description}
-                    </p>
-                  </>
-                )}
-              </div>
-
-              {/* Center Column - Number and Progress Line */}
-              <div className="roadmap-step-center flex flex-col items-center gap-2 sm:gap-5 w-[50px] sm:w-[100px] flex-shrink-0">
-                {/* Step Number */}
-                <div style={{
-                  willChange: 'transform',
-                  transform: 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 0, 0, 1)'
-                }}>
-                  <div className="roadmap-step-number font-bold tracking-[-0.5px] text-white whitespace-pre">
-                    {step.number}
+                    <p className="roadmap-step-description">{step.description}</p>
                   </div>
-                </div>
+                ) : (
+                  <div className="roadmap-step-left-empty" />
+                )}
 
-                {/* Progress Line */}
-                {index !== steps.length - 1 && (
-                  <div className="roadmap-timeline relative w-1 flex-grow bg-white/5">
+                {/* Center Column - Number and Bar */}
+                <div className="roadmap-step-center">
+                  <div className="roadmap-step-number-wrapper">
+                    <p className="roadmap-step-number">{step.number}</p>
+                  </div>
+                  <div className="roadmap-step-bar-container">
                     <div
-                      className="absolute left-0 right-0 w-full bg-[rgb(255,165,69)]"
+                      className="roadmap-step-bar-center"
                       style={{
-                        willChange: 'transform',
+                        transform: `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, ${barTransforms[index]}, 0, 1)`,
                       }}
                     />
                   </div>
-                )}
-              </div>
+                </div>
 
-              {/* Right Column */}
-              <div className="roadmap-step-right flex flex-col gap-3 sm:gap-6 roadmap-step-content" style={{
-                willChange: 'transform',
-                transform: 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 0, 0, 1)'
-              }}>
-                {index % 2 === 0 && (
-                  <>
-                    <div className="flex flex-col gap-0.5 sm:gap-1">
-                      <p className="roadmap-step-label uppercase tracking-[0.5px] text-[#ffa545]">
-                        {step.label}
-                      </p>
-                      <h3 className="roadmap-step-title font-semibold tracking-[-0.5px] text-white">
-                        {step.title}
-                      </h3>
+                {/* Right Column */}
+                {!isLeftContent ? (
+                  <div className="roadmap-step-left-content">
+                    <div className="roadmap-step-content-group">
+                      <p className="roadmap-step-label">{step.label}</p>
+                      <h3 className="roadmap-step-title">{step.title}</h3>
                     </div>
-                    <p className="roadmap-step-description text-white/80">
-                      {step.description}
-                    </p>
-                  </>
+                    <p className="roadmap-step-description">{step.description}</p>
+                  </div>
+                ) : (
+                  <div className="roadmap-step-left-empty" />
                 )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
